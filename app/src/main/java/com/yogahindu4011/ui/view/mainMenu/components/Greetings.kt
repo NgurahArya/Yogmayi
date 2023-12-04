@@ -12,11 +12,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun Greetings(modifier: Modifier){
+fun Greetings(modifier: Modifier = Modifier){
     Column (
         verticalArrangement = Arrangement.spacedBy(5.dp, Alignment.Top),
         horizontalAlignment = Alignment.Start,
         modifier = Modifier
+            .padding(top = 15.dp, end = 15.dp)
     ){
         //ganti dynamic
         Text(

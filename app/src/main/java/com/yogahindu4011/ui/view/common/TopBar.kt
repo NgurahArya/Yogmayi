@@ -25,7 +25,7 @@ import com.yogahindu4011.ui.theme.md_theme_light_primary
 
 @Composable
 fun MainAppTopBar(
-    modifier: Modifier,
+    modifier: Modifier = Modifier,
     color: Color = md_theme_light_primary
 ){
         Row(
@@ -56,7 +56,7 @@ fun MainAppTopBar(
 
 @Composable
 fun MenuTopBar(
-    modifier: Modifier,
+    modifier: Modifier = Modifier,
     color: Color = MaterialTheme.colorScheme.primary
 ){
     Row(

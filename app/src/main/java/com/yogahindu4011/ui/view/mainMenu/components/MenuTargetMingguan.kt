@@ -22,7 +22,7 @@ import com.yogahindu4011.ui.theme.YogaHinduTheme
 import com.yogahindu4011.ui.view.common.MainAppTopBar
 
 @Composable
-fun MenuTargetMingguan(modifier: Modifier){
+fun MenuTargetMingguan(modifier: Modifier = Modifier){
     Row(
         horizontalArrangement = Arrangement.spacedBy(5.dp, Alignment.Start),
         verticalAlignment = Alignment.CenterVertically,

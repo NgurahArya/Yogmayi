@@ -24,7 +24,7 @@ import com.yogahindu4011.R
 import com.yogahindu4011.ui.theme.YogaHinduTheme
 
 @Composable
-fun MenuLatihanYoga(modifier: Modifier) {
+fun MenuLatihanYoga(modifier: Modifier = Modifier) {
     Row {
         Row(
             horizontalArrangement = Arrangement.spacedBy(5.dp, Alignment.Start),
