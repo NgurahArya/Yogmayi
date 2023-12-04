@@ -40,7 +40,7 @@ fun MenuTotalLatihan(modifier: Modifier = Modifier){
             contentDescription = null,
             tint = MaterialTheme.colorScheme.onSecondaryContainer,
             modifier = Modifier
-                .padding(start = 8.dp, end = 7.dp)
+                .padding(start = 17.dp, end = 7.dp)
         )
         Text(
             text = "TOTAL LATIHAN",
