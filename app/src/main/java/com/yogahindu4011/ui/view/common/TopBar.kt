@@ -57,7 +57,8 @@ fun MainAppTopBar(
 @Composable
 fun MenuTopBar(
     modifier: Modifier = Modifier,
-    color: Color = MaterialTheme.colorScheme.primary
+    color: Color = MaterialTheme.colorScheme.primary,
+    text: String
 ){
     Row(
         horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.Start),
@@ -78,7 +79,7 @@ fun MenuTopBar(
         )
 
         Text(
-            text = "SUB MENU",
+            text = text,
             style = MaterialTheme.typography.labelLarge,
             color = MaterialTheme.colorScheme.onPrimary,
         )

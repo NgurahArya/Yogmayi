@@ -2,8 +2,11 @@
 
 package com.yogahindu4011.ui.view.mainMenu
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -32,9 +35,7 @@ fun Preview(){
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainMenuPage(
-    bg: Color = MaterialTheme.colorScheme.background,
-    )
+fun MainMenuPage(modifier: Modifier = Modifier)
 {
     Scaffold(
         topBar = {
