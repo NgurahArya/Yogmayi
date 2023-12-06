@@ -1,4 +1,4 @@
-package com.yogahindu4011.ui.view.mainMenu.components
+package com.yogahindu4011.presentation.menu_mainMenu.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

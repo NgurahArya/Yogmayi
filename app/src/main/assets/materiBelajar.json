@@ -1,0 +1,21 @@
+[
+  {
+    "materiID": "1",
+    "title": "Yoga Secara Umum",
+    "imageUrl": "https://media.discordapp.net/attachments/851796328026865664/1181875123498782761/materi_header.png?ex=6582a5fb&is=657030fb&hm=877b67318e8490b599546fcd89670c70b3abccd61ab7318c20969854db947717&=&format=webp&quality=lossless&width=390&height=390",
+    "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pellentesque mi at elit malesuada scelerisque. \\n\\nMorbi et dui ac tellus pellentesque imperdiet sed semper arcu. Praesent et odio pulvinar, ultricies magna sed, auctor ipsum. Donec tempus id nisl vitae mattis. Duis convallis elit at justo maximus sagittis. Duis efficitur est leo, elementum auctor augue imperdiet a. \\n\\nQuisque justo ligula, blandit a erat sed, pharetra viverra ex. In sit amet tortor at lorem"
+  },
+  {
+    "materiID": "2",
+    "title": "Surya Namaskara",
+    "imageUrl": "https://media.discordapp.net/attachments/851796328026865664/1181875123498782761/materi_header.png?ex=6582a5fb&is=657030fb&hm=877b67318e8490b599546fcd89670c70b3abccd61ab7318c20969854db947717&=&format=webp&quality=lossless&width=390&height=390",
+    "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pellentesque mi at elit malesuada scelerisque. \\n\\nMorbi et dui ac tellus pellentesque imperdiet sed semper arcu. Praesent et odio pulvinar, ultricies magna sed, auctor ipsum. Donec tempus id nisl vitae mattis. Duis convallis elit at justo maximus sagittis. Duis efficitur est leo, elementum auctor augue imperdiet a. \\n\\nQuisque justo ligula, blandit a erat sed, pharetra viverra ex. In sit amet tortor at lorem"
+  },
+  {
+    "materiID": "3",
+    "title": "Chandra Namaskara",
+    "imageUrl": "https://media.discordapp.net/attachments/851796328026865664/1181875123498782761/materi_header.png?ex=6582a5fb&is=657030fb&hm=877b67318e8490b599546fcd89670c70b3abccd61ab7318c20969854db947717&=&format=webp&quality=lossless&width=390&height=390",
+    "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pellentesque mi at elit malesuada scelerisque. \\n\\nMorbi et dui ac tellus pellentesque imperdiet sed semper arcu. Praesent et odio pulvinar, ultricies magna sed, auctor ipsum. Donec tempus id nisl vitae mattis. Duis convallis elit at justo maximus sagittis. Duis efficitur est leo, elementum auctor augue imperdiet a. \\n\\nQuisque justo ligula, blandit a erat sed, pharetra viverra ex. In sit amet tortor at lorem",
+    "": {}
+  }
+]

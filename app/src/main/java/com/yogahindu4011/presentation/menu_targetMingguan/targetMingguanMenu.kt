@@ -1,4 +1,4 @@
-package com.yogahindu4011.ui.view.targetMingguan
+package com.yogahindu4011.presentation.menu_targetMingguan
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -17,10 +17,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.yogahindu4011.ui.theme.YogaHinduTheme
-import com.yogahindu4011.ui.view.common.MainAppTopBar
-import com.yogahindu4011.ui.view.common.MenuTopBar
-import com.yogahindu4011.ui.view.common.shortButton
-import com.yogahindu4011.ui.view.targetMingguan.components.targetCounter
+import com.yogahindu4011.presentation.common.MenuTopBar
+import com.yogahindu4011.presentation.common.shortButton
+import com.yogahindu4011.presentation.menu_targetMingguan.components.targetCounter
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
