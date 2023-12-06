@@ -1,8 +1,10 @@
 package com.yogahindu4011.presentation.menu_targetMingguan
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -16,14 +18,18 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.yogahindu4011.ui.theme.YogaHinduTheme
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.yogahindu4011.presentation.common.MenuTopBar
 import com.yogahindu4011.presentation.common.shortButton
 import com.yogahindu4011.presentation.menu_targetMingguan.components.targetCounter
+import com.yogahindu4011.ui.theme.YogaHinduTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun targetMinggaun(modifier: Modifier = Modifier){
+fun TargetMinggaunMenu(
+    navController: NavController
+) {
     Scaffold(
         topBar = {
             MenuTopBar(
@@ -33,6 +39,8 @@ fun targetMinggaun(modifier: Modifier = Modifier){
     ) {
         Column(
             modifier = Modifier
+                .fillMaxSize()
+                .background(color = MaterialTheme.colorScheme.background)
                 .padding(it)
                 .then(
                     Modifier
@@ -87,7 +95,7 @@ fun targetMinggaun(modifier: Modifier = Modifier){
 @Preview
 fun Preveww(){
     YogaHinduTheme {
-        targetMinggaun()
+        TargetMinggaunMenu(navController = rememberNavController())
     }
 
 }

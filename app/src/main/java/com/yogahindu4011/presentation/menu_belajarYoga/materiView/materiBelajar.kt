@@ -42,6 +42,7 @@ fun MateriItem(materi: MateriBelajar){
     }
 }
 
+/*
 @Composable
 @Preview
 fun MateriListPreview() {
@@ -51,4 +52,4 @@ fun MateriListPreview() {
     MateriScreen(
         viewModel = viewModel
     )
-}
+}*/

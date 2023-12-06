@@ -3,6 +3,7 @@ package com.yogahindu4011.presentation.menu_mainMenu.components
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -19,15 +20,22 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.yogahindu4011.R
+import com.yogahindu4011.navigation.Screen
 
 @Composable
-fun MenuBelajarYoga(modifier: Modifier = Modifier) {
+fun MenuBelajarYoga(
+    navController: NavController
+) {
     Row {
         Row(
             horizontalArrangement = Arrangement.spacedBy(5.dp, Alignment.Start),
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
+                .clickable {
+                    navController.navigate(route = Screen.BelajarYoga.route)
+                }
                 .border(
                     width = 1.dp,
                     color = MaterialTheme.colorScheme.outline,
