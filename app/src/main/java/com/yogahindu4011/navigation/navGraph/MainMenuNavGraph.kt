@@ -1,36 +1,37 @@
-package com.yogahindu4011.navigation
+package com.yogahindu4011.navigation.navGraph
 
-import androidx.compose.runtime.Composable
+import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.navigation
+import com.yogahindu4011.navigation.MAIN_ROUTE
+import com.yogahindu4011.navigation.Screen
 import com.yogahindu4011.presentation.menu_belajarYoga.BelajarYogaMenu
 import com.yogahindu4011.presentation.menu_mainMenu.MainMenuPage
 import com.yogahindu4011.presentation.menu_targetMingguan.TargetMinggaunMenu
 
-@Composable
-fun SetupNavGraph(
+fun NavGraphBuilder.mainMenuNavGraph(
     navController: NavHostController
 ){
-    NavHost(
-        navController = navController ,
-        startDestination = Screen.MainMenu.route
+    navigation(
+        startDestination = Screen.MainMenu.route,
+        route = MAIN_ROUTE
     ){
         composable(
             route = Screen.MainMenu.route
-        ){
+        ) {
             MainMenuPage(navController = navController)
         }
 
         composable(
             route = Screen.TargetMingguan.route
-        ){
+        ) {
             TargetMinggaunMenu(navController = navController)
         }
 
         composable(
             route = Screen.BelajarYoga.route
-        ){
+        ) {
             BelajarYogaMenu(navController = navController)
         }
     }

@@ -3,6 +3,7 @@ package com.yogahindu4011.presentation.menu_belajarYoga.components
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -21,16 +22,23 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.yogahindu4011.R
+import com.yogahindu4011.navigation.Screen
 import com.yogahindu4011.ui.theme.YogaHinduTheme
 
 @Composable
 fun menuBelajarYogaGeneral(
-    modifier: Modifier = Modifier
+    navController: NavController
 ) {
     Column(
         verticalArrangement = Arrangement.spacedBy(0.dp, Alignment.CenterVertically),
-        horizontalAlignment = Alignment.Start
+        horizontalAlignment = Alignment.Start,
+        modifier = Modifier
+            .clickable {
+                navController.navigate(route = Screen.MateriYoga.route)
+            }
     ) {
         Text(
             text = "YOGA SECARA UMUM",
@@ -60,7 +68,7 @@ fun menuBelajarYogaGeneral(
             Image(
                 painter = painterResource(id = R.drawable.ic_book),
                 contentDescription = "icon menu 1",
-                modifier = modifier
+                modifier = Modifier
                     .height(100.dp)
                     .width(100.dp)
                     .padding(end = 5.dp)
@@ -71,11 +79,15 @@ fun menuBelajarYogaGeneral(
 
 @Composable
 fun menuBelajarYogaSurya(
-    modifier: Modifier = Modifier
+    navController: NavController
 ) {
     Column(
         verticalArrangement = Arrangement.spacedBy(0.dp, Alignment.CenterVertically),
-        horizontalAlignment = Alignment.Start
+        horizontalAlignment = Alignment.Start,
+        modifier = Modifier
+            .clickable {
+                navController.navigate(route = Screen.MateriYoga2.route)
+            }
     ) {
         Text(
             text = "GERAKAN SURYA NAMASKARA",
@@ -105,7 +117,7 @@ fun menuBelajarYogaSurya(
             Image(
                 painter = painterResource(id = R.drawable.ic_sun),
                 contentDescription = "icon menu 2",
-                modifier = modifier
+                modifier = Modifier
                     .height(102.dp)
                     .width(100.dp)
                     .padding(end = 5.dp)
@@ -116,11 +128,15 @@ fun menuBelajarYogaSurya(
 
 @Composable
 fun menuBelajarYogaChandra(
-    modifier: Modifier = Modifier
+    navController: NavController
 ) {
     Column(
         verticalArrangement = Arrangement.spacedBy(0.dp, Alignment.CenterVertically),
-        horizontalAlignment = Alignment.Start
+        horizontalAlignment = Alignment.Start,
+        modifier = Modifier
+            .clickable {
+                navController.navigate(route = Screen.MateriYoga3.route)
+            }
     ) {
         Text(
             text = "GERAKAN CHANDRA NAMASKARA",
@@ -150,7 +166,7 @@ fun menuBelajarYogaChandra(
             Image(
                 painter = painterResource(id = R.drawable.ic_moon),
                 contentDescription = "icon menu 3",
-                modifier = modifier
+                modifier = Modifier
                     .height(130.dp)
                     .width(100.dp)
                     .padding(end = 5.dp)
@@ -161,18 +177,18 @@ fun menuBelajarYogaChandra(
 @Composable
 @Preview
 fun MenuBelajarPreview(){
-    YogaHinduTheme { menuBelajarYogaGeneral() }
+    YogaHinduTheme { menuBelajarYogaGeneral(navController = rememberNavController()) }
 }
 
 @Composable
 @Preview
 fun MenuBelajarPreview2(){
-    YogaHinduTheme { menuBelajarYogaSurya() }
+    YogaHinduTheme { menuBelajarYogaSurya(navController = rememberNavController()) }
 }
 
 @Composable
 @Preview
 fun MenuBelajarPreview3(){
-    YogaHinduTheme { menuBelajarYogaChandra() }
+    YogaHinduTheme { menuBelajarYogaChandra(navController = rememberNavController()) }
 }
 

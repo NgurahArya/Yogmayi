@@ -59,11 +59,9 @@ fun BelajarYogaMenu(
                     .padding(bottom = 20.dp)
             )
 
-            menuBelajarYogaGeneral()
-            menuBelajarYogaSurya()
-            menuBelajarYogaChandra()
-
-
+            menuBelajarYogaGeneral(navController = navController)
+            menuBelajarYogaSurya(navController = navController)
+            menuBelajarYogaChandra(navController = navController)
         }
     }
 }
