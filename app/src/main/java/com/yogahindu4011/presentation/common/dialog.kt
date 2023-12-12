@@ -19,15 +19,19 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.yogahindu4011.R
+import com.yogahindu4011.navigation.Screen
 import com.yogahindu4011.ui.theme.YogaHinduTheme
 
 @Composable
 fun simpanDialog(
     onDismissRequest: () -> Unit,
-    onConfirmation: () -> Unit,
+    onConfirmation: (NavController) -> Unit,
     dialogTitle: String,
     dialogText: String,
+    navController: NavController,
     modifier: Modifier = Modifier
 ){
     AlertDialog(
@@ -56,13 +60,12 @@ fun simpanDialog(
             )
         },
 
-        onDismissRequest = {
-            onDismissRequest()
-        },
-
         confirmButton = {
             Button(
-                onClick = {onConfirmation()},
+                onClick = {
+                    onConfirmation(navController)
+                    navController.navigate(route = Screen.MainMenu.route)
+                },
                 colors = ButtonDefaults.buttonColors(
                     containerColor = MaterialTheme.colorScheme.primary,
                     contentColor = Color.White
@@ -71,6 +74,8 @@ fun simpanDialog(
                 Text("OK", style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold))
             }
         },
+
+        onDismissRequest = {onDismissRequest()},
 
         modifier = Modifier
             .border(width = 2.dp, color = MaterialTheme.colorScheme.outline, RoundedCornerShape(size = 25.dp))
@@ -84,10 +89,11 @@ fun simpanDialog(
 fun dialogPrev(){
     YogaHinduTheme {
         simpanDialog(
-            onDismissRequest = {},
             onConfirmation = {},
+            onDismissRequest = {},
             dialogTitle = "BERHASIL TERSIMPAN",
-            dialogText = "Anda akan diarahkan kembali ke Menu Utama"
+            dialogText = "Anda akan diarahkan kembali ke Menu Utama",
+            navController = rememberNavController()
         )
     }
 }
@@ -146,6 +152,49 @@ fun prevDialConfirm(){
     YogaHinduTheme { konfirmasiDialog(onDismissRequest = {}, onConfirmation = {}, dialogTitle = "BATALKAN LATIHAN ?") }
 }
 
+
+/*@Composable
+fun dialogTest(
+    onDismissRequest: () -> Unit,
+    onConfirmation: () -> Unit,
+    dialogTitle: String,
+){
+    AlertDialog(
+        title = {
+            Text(
+                text = dialogTitle,
+                style = MaterialTheme.typography.labelLarge,
+                color = MaterialTheme.colorScheme.onBackground
+            )
+        },
+
+        confirmButton = {
+            Button(
+                onClick = {
+                    onConfirmation()
+                },
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.primary,
+                    contentColor = Color.White
+                )
+            ){
+                Text("OK", style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold))
+            }
+        },
+
+        onDismissRequest = {onDismissRequest()},
+    )
+}
+
+@Composable
+@Preview
+fun DiaPrev(){
+    dialogTest(
+        onDismissRequest = {},
+        onConfirmation = {},
+        dialogTitle = "Test"
+    )
+}*/
 
 /*shortButton(
 text = "KEMBALI KE MENU",

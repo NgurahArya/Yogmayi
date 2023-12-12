@@ -35,10 +35,6 @@ fun menuBelajarYogaGeneral(
     Column(
         verticalArrangement = Arrangement.spacedBy(0.dp, Alignment.CenterVertically),
         horizontalAlignment = Alignment.Start,
-        modifier = Modifier
-            .clickable {
-                navController.navigate(route = Screen.MateriYoga.route)
-            }
     ) {
         Text(
             text = "YOGA SECARA UMUM",
@@ -50,6 +46,9 @@ fun menuBelajarYogaGeneral(
             horizontalArrangement = Arrangement.spacedBy(5.dp, Alignment.Start),
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
+                .clickable {
+                    navController.navigate(route = Screen.MateriYoga.route)
+                }
                 .border(width = 1.dp, color = MaterialTheme.colorScheme.outline, shape = RoundedCornerShape(size = 5.dp))
                 .height(height = 112.dp)
                 .fillMaxWidth()
@@ -84,10 +83,6 @@ fun menuBelajarYogaSurya(
     Column(
         verticalArrangement = Arrangement.spacedBy(0.dp, Alignment.CenterVertically),
         horizontalAlignment = Alignment.Start,
-        modifier = Modifier
-            .clickable {
-                navController.navigate(route = Screen.MateriYoga2.route)
-            }
     ) {
         Text(
             text = "GERAKAN SURYA NAMASKARA",
@@ -99,6 +94,9 @@ fun menuBelajarYogaSurya(
             horizontalArrangement = Arrangement.spacedBy(5.dp, Alignment.Start),
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
+                .clickable {
+                    navController.navigate(route = Screen.MateriYoga2.route)
+                }
                 .border(width = 1.dp, color = MaterialTheme.colorScheme.outline, shape = RoundedCornerShape(size = 5.dp))
                 .height(height = 112.dp)
                 .fillMaxWidth()
@@ -133,10 +131,6 @@ fun menuBelajarYogaChandra(
     Column(
         verticalArrangement = Arrangement.spacedBy(0.dp, Alignment.CenterVertically),
         horizontalAlignment = Alignment.Start,
-        modifier = Modifier
-            .clickable {
-                navController.navigate(route = Screen.MateriYoga3.route)
-            }
     ) {
         Text(
             text = "GERAKAN CHANDRA NAMASKARA",
@@ -148,6 +142,9 @@ fun menuBelajarYogaChandra(
             horizontalArrangement = Arrangement.spacedBy(5.dp, Alignment.Start),
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
+                .clickable {
+                    navController.navigate(route = Screen.MateriYoga3.route)
+                }
                 .border(width = 1.dp, color = MaterialTheme.colorScheme.outline, shape = RoundedCornerShape(size = 5.dp))
                 .height(height = 112.dp)
                 .fillMaxWidth()

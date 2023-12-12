@@ -3,8 +3,10 @@ package com.yogahindu4011.presentation.common
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -19,6 +21,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.yogahindu4011.R
 import com.yogahindu4011.ui.theme.YogaHinduTheme
 import com.yogahindu4011.ui.theme.md_theme_light_primary
@@ -58,7 +62,8 @@ fun MainAppTopBar(
 fun MenuTopBar(
     modifier: Modifier = Modifier,
     color: Color = MaterialTheme.colorScheme.primary,
-    text: String
+    text: String,
+    navController: NavController
 ){
     Row(
         horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.Start),
@@ -75,17 +80,24 @@ fun MenuTopBar(
             contentDescription = null,
             tint = MaterialTheme.colorScheme.onPrimary,
             modifier = Modifier
-                .padding(top = 2.dp)
+                .padding(end = 8.dp)
+                .fillMaxHeight()
+                .clickable { navController.popBackStack() }
         )
 
         Text(
             text = text,
             style = MaterialTheme.typography.labelLarge,
             color = MaterialTheme.colorScheme.onPrimary,
+            modifier = Modifier
         )
 
     }
 }
 
+@Composable
+@Preview
+fun menuTopBarPrev(){
+    YogaHinduTheme { MenuTopBar(text = "Sub Menu", navController = rememberNavController()) }
 
-
+}

@@ -53,9 +53,9 @@ fun MenuTotalLatihan(modifier: Modifier = Modifier){
                 .padding(start = 17.dp)
         ){
 
-            //ganti dynamic
+            //ganti pakai data
             Text(
-                text = "1",
+                text = "2",
                 style = MaterialTheme.typography.labelLarge,
                 color = MaterialTheme.colorScheme.onSecondaryContainer,
                 modifier = Modifier

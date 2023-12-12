@@ -11,7 +11,8 @@ fun screenMateriYogaGeneral(
     MateriItem(
         R.drawable.ic_general_header,
         "Yoga Secara General",
-        R.string.materi1
+        R.string.materi1,
+        navController = navController
         )
 }
 
@@ -22,7 +23,8 @@ fun screenMateriYogaSurya(
     MateriItem(
         R.drawable.ic_materi_surya_header,
         "Surya Namaskara",
-        R.string.materi1
+        R.string.materi1,
+        navController = navController
     )
 }
 
@@ -33,6 +35,7 @@ fun screenMateriYogaChandra(
     MateriItem(
         R.drawable.ic_materi_chandra_header,
         "Chandra Namaskara",
-        R.string.materi1
+        R.string.materi1,
+        navController = navController
     )
 }

@@ -32,7 +32,8 @@ fun BelajarYogaMenu(
     Scaffold(
         topBar = {
             MenuTopBar(
-                text = "Target Mingguan"
+                text = "Target Mingguan",
+                navController = navController
             )
         }
     ) {

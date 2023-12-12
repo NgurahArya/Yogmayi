@@ -23,7 +23,7 @@ fun shortButton(
     onClick: () -> Unit
 ){
     Button(
-        onClick = {},
+        onClick = {onClick()},
         colors = ButtonDefaults.buttonColors(
             containerColor = MaterialTheme.colorScheme.primary,
             contentColor = Color.White

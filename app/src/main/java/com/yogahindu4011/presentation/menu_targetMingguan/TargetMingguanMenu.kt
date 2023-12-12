@@ -12,6 +12,10 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -22,6 +26,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.yogahindu4011.presentation.common.MenuTopBar
 import com.yogahindu4011.presentation.common.shortButton
+import com.yogahindu4011.presentation.common.simpanDialog
 import com.yogahindu4011.presentation.menu_targetMingguan.components.targetCounter
 import com.yogahindu4011.ui.theme.YogaHinduTheme
 
@@ -30,10 +35,13 @@ import com.yogahindu4011.ui.theme.YogaHinduTheme
 fun TargetMinggaunMenu(
     navController: NavController
 ) {
+    var openAlertDialog by remember { mutableStateOf(false) }
+
     Scaffold(
         topBar = {
             MenuTopBar(
-                text = "Target Mingguan"
+                text = "Target Mingguan",
+                navController = navController
             )
         }
     ) {
@@ -84,10 +92,21 @@ fun TargetMinggaunMenu(
             ){
                 shortButton(
                     text = "SIMPAN",
-                    onClick = {}
+                    onClick = {
+                        openAlertDialog = true
+                    }
                 )
             }
         }
+    }
+    if (openAlertDialog){
+        simpanDialog(
+            onDismissRequest = {openAlertDialog = false},
+            onConfirmation = {navController.popBackStack()},
+            dialogTitle = "BERHASIL TERSIMPAN",
+            dialogText = "Anda akan diarahkan kembali ke Menu Utama",
+            navController = navController
+        )
     }
 }
 

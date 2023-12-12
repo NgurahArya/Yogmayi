@@ -21,6 +21,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.yogahindu4011.R
 import com.yogahindu4011.presentation.common.MenuTopBar
 import com.yogahindu4011.ui.theme.YogaHinduTheme
@@ -31,11 +33,13 @@ fun MateriItem(
     imageId: Int,
     title: String,
     body: Int,
+    navController: NavController
 ) {
     Scaffold(
         topBar = {
             MenuTopBar(
-                text = "Materi Bacaan"
+                text = "Materi Bacaan",
+                navController = navController
             )
         }
     ) {
@@ -89,7 +93,7 @@ fun MateriItem(
 @Preview
 fun prevMaterii(){
     YogaHinduTheme {
-        MateriItem(R.drawable.ic_materi_chandra_header, "Surya Namaskara", R.string.materi1)
+        MateriItem(R.drawable.ic_materi_chandra_header, "Surya Namaskara", R.string.materi1, rememberNavController())
     }
 
 }

@@ -9,6 +9,10 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SmallFloatingActionButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -21,24 +25,39 @@ import com.yogahindu4011.ui.theme.YogaHinduTheme
 fun targetCounter(
     modifier: Modifier = Modifier
 ){
+    var count by remember { mutableStateOf(0) }
+
+    fun decrement(){
+        if(count > 0){
+            count--
+        }
+    }
+
+    fun increment(){
+        if(count < 7) {
+            count++
+        }
+    }
+
     Row (
         horizontalArrangement = Arrangement.spacedBy(20.dp, Alignment.CenterHorizontally),
         verticalAlignment = Alignment.CenterVertically,
     ){
-        minusButton{}
+        minusButton{decrement()}
 
         Text(
-            text = "2 kali/minggu",
+            text = "$count " + "kali/minggu",
             style = MaterialTheme.typography.labelSmall,
             color = MaterialTheme.colorScheme.onBackground
         )
 
-        plusButton {}
+        plusButton {increment()}
     }
 }
 
 @Composable
 fun minusButton(onClick: () -> Unit) {
+
     SmallFloatingActionButton(
         onClick = { onClick() },
         containerColor = MaterialTheme.colorScheme.surface,
@@ -56,6 +75,7 @@ fun minusButton(onClick: () -> Unit) {
 
 @Composable
 fun plusButton(onClick: () -> Unit) {
+
     SmallFloatingActionButton(
         onClick = { onClick() },
         containerColor = MaterialTheme.colorScheme.surface,
@@ -70,6 +90,8 @@ fun plusButton(onClick: () -> Unit) {
         )
     }
 }
+
+
 @Composable
 @Preview(showBackground = true)
 fun counterPrev(){
