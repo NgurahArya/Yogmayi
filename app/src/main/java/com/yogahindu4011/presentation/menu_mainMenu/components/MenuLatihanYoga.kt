@@ -3,6 +3,7 @@ package com.yogahindu4011.presentation.menu_mainMenu.components
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -19,15 +20,20 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.yogahindu4011.R
+import com.yogahindu4011.navigation.Screen
 
 @Composable
-fun MenuLatihanYoga(modifier: Modifier = Modifier) {
+fun MenuLatihanYoga(
+    navController: NavController
+){
     Row {
         Row(
             horizontalArrangement = Arrangement.spacedBy(5.dp, Alignment.Start),
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
+                .clickable { navController.navigate(Screen.LatihanYoga.route) }
                 .border(
                     width = 1.dp,
                     color = MaterialTheme.colorScheme.outline,
@@ -47,7 +53,6 @@ fun MenuLatihanYoga(modifier: Modifier = Modifier) {
                     text = "MULAI LATIHAN YOGA",
                     style = MaterialTheme.typography.labelLarge,
                     color = MaterialTheme.colorScheme.onSecondaryContainer,
-                    modifier = Modifier
                 )
                 Text(
                     text = "3 GERAKAN",

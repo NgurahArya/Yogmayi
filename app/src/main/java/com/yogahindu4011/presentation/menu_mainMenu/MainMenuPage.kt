@@ -53,7 +53,7 @@ fun MainMenuPage(
             Greetings()
             MenuTargetMingguan(navController = navController)
             MenuBelajarYoga(navController = navController)
-            MenuLatihanYoga()
+            MenuLatihanYoga(navController = navController)
             MenuProgramPilihan()
             MenuTotalLatihan()
         }

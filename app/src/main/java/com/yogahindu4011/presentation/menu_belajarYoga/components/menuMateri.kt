@@ -59,7 +59,7 @@ fun menuBelajarYogaGeneral(
                 style = MaterialTheme.typography.labelMedium,
                 color = MaterialTheme.colorScheme.onSecondaryContainer,
                 modifier = Modifier
-                    .padding(start = 17.dp)
+                    .padding(start = 12.dp)
             )
 
             Spacer(modifier = Modifier .weight(1f))
@@ -107,7 +107,7 @@ fun menuBelajarYogaSurya(
                 style = MaterialTheme.typography.labelMedium,
                 color = MaterialTheme.colorScheme.onSecondaryContainer,
                 modifier = Modifier
-                    .padding(start = 17.dp)
+                    .padding(start = 12.dp)
             )
 
             Spacer(modifier = Modifier .weight(1f))
@@ -155,7 +155,7 @@ fun menuBelajarYogaChandra(
                 style = MaterialTheme.typography.labelMedium,
                 color = MaterialTheme.colorScheme.onSecondaryContainer,
                 modifier = Modifier
-                    .padding(start = 17.dp)
+                    .padding(start = 12.dp)
             )
 
             Spacer(modifier = Modifier .weight(1f))

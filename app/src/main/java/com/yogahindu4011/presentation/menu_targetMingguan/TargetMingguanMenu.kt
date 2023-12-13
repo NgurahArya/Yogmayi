@@ -93,6 +93,7 @@ fun TargetMinggaunMenu(
                 shortButton(
                     text = "SIMPAN",
                     onClick = {
+                        //blm rewrite data dan tampilin di main menu
                         openAlertDialog = true
                     }
                 )

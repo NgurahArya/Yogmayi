@@ -15,5 +15,6 @@ sealed class Screen(val route: String) {
     object MateriYoga2: Screen(route = "materi_yoga_surya")
     object MateriYoga3: Screen(route = "materi_yoga_chandra")
 
+    object LatihanYoga: Screen(route = "menu_latihan_yoga")
 
 }

@@ -7,6 +7,7 @@ import androidx.navigation.navigation
 import com.yogahindu4011.navigation.MAIN_ROUTE
 import com.yogahindu4011.navigation.Screen
 import com.yogahindu4011.presentation.menu_belajarYoga.BelajarYogaMenu
+import com.yogahindu4011.presentation.menu_latihanYoga.LatihanYogaMenu
 import com.yogahindu4011.presentation.menu_mainMenu.MainMenuPage
 import com.yogahindu4011.presentation.menu_targetMingguan.TargetMinggaunMenu
 
@@ -33,6 +34,12 @@ fun NavGraphBuilder.mainMenuNavGraph(
             route = Screen.BelajarYoga.route
         ) {
             BelajarYogaMenu(navController = navController)
+        }
+
+        composable(
+            route = Screen.LatihanYoga.route
+        ) {
+            LatihanYogaMenu(navController = navController)
         }
     }
 }
