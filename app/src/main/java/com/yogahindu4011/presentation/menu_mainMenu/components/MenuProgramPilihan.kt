@@ -44,13 +44,21 @@ fun MenuProgramPilihan(modifier: Modifier = Modifier){
             modifier = Modifier
                 .padding(bottom = 5.dp)
         )
-        //ganti dynamic
+
         Text(
             text = "Surya Namaskara, 12 mins",
             style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Normal),
             color = MaterialTheme.colorScheme.onSecondaryContainer,
             modifier = Modifier
-                .padding(bottom = 12.dp)
+                .padding(bottom = 3.dp)
+        )
+
+        Text(
+            text = "Level: Beginer ",
+            style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Normal),
+            color = MaterialTheme.colorScheme.onSecondaryContainer,
+            modifier = Modifier
+                .padding(bottom = 10.dp)
         )
 
         Image(

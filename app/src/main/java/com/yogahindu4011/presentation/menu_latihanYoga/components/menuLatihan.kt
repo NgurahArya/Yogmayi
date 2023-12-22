@@ -24,20 +24,22 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.yogahindu4011.R
+import com.yogahindu4011.navigation.Screen
 
 @Composable
 fun menuLatihanYoga(
     title: String,
     subTitle: String,
     img: Int,
-    navController: NavController
+    navController: NavController,
+    route: String
 ){
     Row (
         horizontalArrangement = Arrangement.spacedBy(0.dp, Alignment.Start),
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
             .clickable {
-                navController
+                navController.navigate(route = route )
             }
             .border(width = 1.dp, color = MaterialTheme.colorScheme.outline, shape = RoundedCornerShape(size = 5.dp))
             .height(height = 83.dp)
@@ -79,5 +81,5 @@ fun menuLatihanYoga(
 @Composable
 @Preview
 fun PrevMenuLatihan(){
-    menuLatihanYoga(title = "Surya", subTitle = "5 menit", img = R.drawable.ic_moon, navController = rememberNavController())
+    menuLatihanYoga(title = "Surya", subTitle = "5 menit", img = R.drawable.ic_moon, route = Screen.LatihanYoga.route, navController = rememberNavController())
 }

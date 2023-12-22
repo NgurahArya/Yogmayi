@@ -39,10 +39,10 @@ fun MainAppTopBar(
                 .fillMaxWidth()
                 .height(75.dp)
                 .background(color)
-                .padding(start = 20.dp, top = 16.dp, end = 20.dp, bottom = 16.dp)
+                .padding(start = 20.dp, top = 10.dp, end = 20.dp, bottom = 10.dp)
         ){
-            Text(
-                text = "YOGA HINDU",
+                Text(
+                text = "YOGMAYI",
                 style = MaterialTheme.typography.labelLarge,
                 color = MaterialTheme.colorScheme.onPrimary,
                 modifier = Modifier

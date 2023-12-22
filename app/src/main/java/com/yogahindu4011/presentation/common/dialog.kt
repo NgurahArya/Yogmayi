@@ -1,17 +1,28 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
+
 package com.yogahindu4011.presentation.common
 
 
 import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.State
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
@@ -65,6 +76,7 @@ fun simpanDialog(
                 onClick = {
                     onConfirmation(navController)
                     navController.navigate(route = Screen.MainMenu.route)
+                    onDismissRequest()
                 },
                 colors = ButtonDefaults.buttonColors(
                     containerColor = MaterialTheme.colorScheme.primary,
@@ -151,6 +163,145 @@ fun konfirmasiDialog(
 fun prevDialConfirm(){
     YogaHinduTheme { konfirmasiDialog(onDismissRequest = {}, onConfirmation = {}, dialogTitle = "BATALKAN LATIHAN ?") }
 }
+
+@Composable
+fun NameDialogAfter(
+    saveName: (String) -> Unit,
+    openName: MutableState<Boolean>,
+    currentName: State<String?>
+){
+    val name = remember{
+        mutableStateOf(currentName.value ?: "")
+    }
+
+    AlertDialog(
+        title = {
+            Text(
+                text = "Silahkan Ubah Nama Anda",
+                style = MaterialTheme.typography.labelLarge,
+                color = MaterialTheme.colorScheme.onBackground,
+                textAlign = TextAlign.Center
+            )
+        },
+
+        confirmButton = {
+            Button(
+                onClick = {
+                    saveName.invoke(name.value)
+                    openName.value = false
+                },
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.primary,
+                    contentColor = Color.White
+                )
+            ){
+                Text("OK", style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold))
+            }
+        },
+
+        text = {
+
+            TextField(
+                modifier = Modifier.fillMaxWidth() .padding(bottom = 5.dp),
+                value = name.value,
+                label = { Text("Masukan Nama Anda") },
+                singleLine = true,
+                colors = TextFieldDefaults.textFieldColors(
+                    textColor = MaterialTheme.colorScheme.onBackground,
+                    MaterialTheme.colorScheme.surface,
+                ),
+                onValueChange = {newName ->
+                    name.value = newName
+                },
+                shape = RoundedCornerShape(size = 10.dp)
+
+            )
+        },
+
+        onDismissRequest = {openName.value = false},
+
+        modifier = Modifier
+            .border(width = 2.dp, color = MaterialTheme.colorScheme.outline, RoundedCornerShape(size = 25.dp))
+            .height(250.dp)
+    )
+}
+@Composable
+fun NameDialog(
+    saveName: (String) -> Unit,
+    openName: MutableState<Boolean>,
+    currentName: State<String?>
+){
+    val name = remember{
+        mutableStateOf(currentName.value ?: "")
+    }
+
+    AlertDialog(
+        title = {
+            Text(
+                text = "Selamat Datang di YOGMAYI!",
+                style = MaterialTheme.typography.labelLarge,
+                color = MaterialTheme.colorScheme.onBackground
+            )
+        },
+
+        icon = {
+            Icon(
+                painterResource(id = R.drawable.ic_applogowhite),
+                contentDescription = null,
+                tint = MaterialTheme.colorScheme.primary
+            )
+        },
+
+        confirmButton = {
+            Button(
+                onClick = {
+                   saveName.invoke(name.value)
+                    openName.value = false
+                },
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.primary,
+                    contentColor = Color.White
+                )
+            ){
+                Text("OK", style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold))
+            }
+        },
+
+        text = {
+
+            TextField(
+                modifier = Modifier.fillMaxWidth() .padding(bottom = 5.dp),
+                value = name.value,
+                label = { Text("Masukan Nama Anda") },
+                singleLine = true,
+                colors = TextFieldDefaults.textFieldColors(
+                    textColor = MaterialTheme.colorScheme.onBackground,
+                    MaterialTheme.colorScheme.surface,
+                ),
+                onValueChange = {newName ->
+                    name.value = newName
+                },
+                shape = RoundedCornerShape(size = 10.dp)
+
+            )
+        },
+
+        onDismissRequest = {openName.value = false},
+
+        modifier = Modifier
+            .border(width = 2.dp, color = MaterialTheme.colorScheme.outline, RoundedCornerShape(size = 25.dp))
+            .height(500.dp)
+    )
+}
+
+//text = {
+//            Text(
+//                text = "Untuk memulai masukan nama terlebih dahulu",
+//                style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Normal),
+//                color = MaterialTheme.colorScheme.onBackground,
+//                textAlign = TextAlign.Center
+//            )
+//        },
 
 
 /*@Composable

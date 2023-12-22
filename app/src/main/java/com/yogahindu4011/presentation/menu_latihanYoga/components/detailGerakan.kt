@@ -29,7 +29,7 @@ import com.yogahindu4011.presentation.common.MenuTopBar
 import com.yogahindu4011.ui.theme.YogaHinduTheme
 
 @Composable
-fun detailLatihan(
+fun detailGerakan(
     img: Int,
     title: String,
     how: String,
@@ -129,7 +129,7 @@ fun detailLatihan(
 @Composable
 fun previewDetailGerakan(){
     YogaHinduTheme {
-        detailLatihan(
+        detailGerakan(
             img = R.drawable.ic_general_header,
             title = "Pose A",
             how = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pellentesque mi at elit malesuada scelerisque. Morbi et dui ac tellus pellentesque imperdiet sed semper arcu. Praesent et odio pulvinar, ultricies magna sed, auctor ipsum. Donec tempus id nisl vitae mattis.",

@@ -23,48 +23,35 @@ import com.yogahindu4011.ui.theme.YogaHinduTheme
 fun judulLatihan(
     title: String,
     level: String,
-    desc: String
+    desc: String,
+    modifier: Modifier = Modifier
 ){
     Column(
         modifier = Modifier
             .background(color = MaterialTheme.colorScheme.background),
         verticalArrangement = Arrangement.spacedBy(5.dp)
     ) {
-        Row() {
-            Column(
-                verticalArrangement = Arrangement.spacedBy(5.dp)
-            ) {
-                Text(
-                    text = title,
-                    style = MaterialTheme.typography.labelLarge,
-                    color = MaterialTheme.colorScheme.onBackground
-                )
+        Column(
+            verticalArrangement = Arrangement.spacedBy(5.dp)
+        ) {
+            Text(
+                text = title,
+                style = MaterialTheme.typography.labelLarge,
+                color = MaterialTheme.colorScheme.onBackground
+            )
 
-                Text(
-                    text = "Level: ${level}",
-                    style = MaterialTheme.typography.labelSmall,
-                    color = MaterialTheme.colorScheme.onPrimaryContainer
-                )
-            }
+            Text(
+                text = "Level: ${level}",
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.onPrimaryContainer
+            )
 
-            Spacer(modifier = Modifier .weight(1f))
-
-            Icon(
-                painter = painterResource(id= R.drawable.ic_play),
-                contentDescription = "Tonton Video",
-                tint = MaterialTheme.colorScheme.primary,
-                modifier = Modifier
-                    .height(50.dp)
-                    .width(50.dp)
-                    .padding(end = 16.dp)
+            Text(
+                text = desc,
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.onPrimaryContainer
             )
         }
-
-        Text(
-            text = desc,
-            style = MaterialTheme.typography.labelSmall,
-            color = MaterialTheme.colorScheme.onPrimaryContainer
-        )
     }
 }
 

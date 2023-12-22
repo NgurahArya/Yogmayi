@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.yogahindu4011.R
+import com.yogahindu4011.navigation.Screen
 import com.yogahindu4011.presentation.common.MenuTopBar
 import com.yogahindu4011.presentation.menu_latihanYoga.components.menuLatihanYoga
 import com.yogahindu4011.ui.theme.YogaHinduTheme
@@ -62,21 +63,24 @@ fun LatihanYogaMenu(
                 title = "Perenggangan",
                 subTitle = "5 menit",
                 img = R.drawable.ic_book,
-                navController = navController
+                navController = navController,
+                route = Screen.LatihanSurya.route
             )
 
             menuLatihanYoga(
                 title = "Surya Namaskara",
                 subTitle = "12 menit",
                 img = R.drawable.ic_book,
-                navController = navController
+                navController = navController,
+                route = Screen.LatihanSurya.route
             )
 
             menuLatihanYoga(
                 title = "Chandra Namaskara",
                 subTitle = "12 menit",
                 img = R.drawable.ic_book,
-                navController = navController
+                navController = navController,
+                route = Screen.LatihanSurya.route
             )
         }
     }

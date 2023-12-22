@@ -10,9 +10,11 @@ import com.yogahindu4011.presentation.menu_belajarYoga.BelajarYogaMenu
 import com.yogahindu4011.presentation.menu_latihanYoga.LatihanYogaMenu
 import com.yogahindu4011.presentation.menu_mainMenu.MainMenuPage
 import com.yogahindu4011.presentation.menu_targetMingguan.TargetMinggaunMenu
+import com.yogahindu4011.viewModel.YogaViewModel
 
 fun NavGraphBuilder.mainMenuNavGraph(
-    navController: NavHostController
+    navController: NavHostController,
+    viewModel: YogaViewModel
 ){
     navigation(
         startDestination = Screen.MainMenu.route,
@@ -21,7 +23,7 @@ fun NavGraphBuilder.mainMenuNavGraph(
         composable(
             route = Screen.MainMenu.route
         ) {
-            MainMenuPage(navController = navController)
+            MainMenuPage(navController = navController, viewModel = viewModel )
         }
 
         composable(

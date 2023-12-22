@@ -1,5 +1,6 @@
 package com.yogahindu4011.presentation.menu_mainMenu.components
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -12,18 +13,21 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun Greetings(modifier: Modifier = Modifier){
+fun Greetings(
+    name: String,
+    onTitleClick: (() -> Unit)? = null,
+    modifier: Modifier = Modifier){
     Column (
         verticalArrangement = Arrangement.spacedBy(5.dp, Alignment.Top),
         horizontalAlignment = Alignment.Start,
         modifier = Modifier
             .padding(top = 15.dp, end = 15.dp)
     ){
-        //ganti dynamic
         Text(
-            text = "Selamat Pagi, Arya",
+            text = "${name}",
             style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
             color = MaterialTheme.colorScheme.onBackground,
+            modifier = Modifier .clickable { onTitleClick?.invoke() }
         )
         Text(
             text = "Tetap Semangat!",
