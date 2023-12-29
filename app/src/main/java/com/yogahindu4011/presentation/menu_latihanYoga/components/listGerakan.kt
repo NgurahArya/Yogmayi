@@ -20,26 +20,19 @@ import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
 import com.yogahindu4011.R
-import com.yogahindu4011.ui.theme.YogaHinduTheme
+import com.yogahindu4011.data.GerakanYoga
 
 @Composable
 fun listGerakan(
-    img: Int,
-    title: String,
-    time: String,
-    navController: NavController
+    gerakan: GerakanYoga
 ){
     Row (
         horizontalArrangement = Arrangement.spacedBy(16.dp, Alignment.Start),
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
             .clickable {
-                navController
             }
             .height(height = 105.dp)
             .fillMaxWidth()
@@ -57,7 +50,7 @@ fun listGerakan(
             }
     ){
         Image(
-            painter = painterResource(id = img),
+            painter = painterResource(id = gerakan.imageUrl),
             contentDescription = null,
             modifier = Modifier
                 .fillMaxHeight()
@@ -73,15 +66,9 @@ fun listGerakan(
                 .padding(start = 16.dp, end = 16.dp)
         ) {
             Text(
-                text = title,
+                text = gerakan.namaGerakan,
                 style = MaterialTheme.typography.labelSmall,
                 color = MaterialTheme.colorScheme.onBackground,
-            )
-
-            Text(
-                text = time,
-                style = MaterialTheme.typography.labelSmall,
-                color = MaterialTheme.colorScheme.secondary,
             )
         }
 
@@ -96,10 +83,12 @@ fun listGerakan(
     }
 }
 
+/*
 @Preview
 @Composable
 fun listGerakanPrev(){
     YogaHinduTheme {
-        listGerakan(R.drawable.ic_face_posture_sit, "Pose A", "0:30", navController = rememberNavController())
+        val based = gerakan.first()
+        listGerakan(gerakan = based, navController = rememberNavController())
     }
-}
+}*/

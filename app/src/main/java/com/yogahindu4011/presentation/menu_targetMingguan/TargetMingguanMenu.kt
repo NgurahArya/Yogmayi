@@ -66,7 +66,7 @@ fun TargetMinggaunMenu(
                     .align(Alignment.CenterHorizontally)
             )
             Text(
-                text = "Direkomendasikan untuk melakukan latihan yoga minimum 3 kali dalam seminggu untuk mendapatkan hasil yang maksimal.",
+                text = "Direkomendasikan untuk melakukan latihan yoga minimum 3 kali dalam seminggu ",
                 style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight(400)),
                 textAlign = TextAlign.Justify,
                 color = MaterialTheme.colorScheme.onBackground
