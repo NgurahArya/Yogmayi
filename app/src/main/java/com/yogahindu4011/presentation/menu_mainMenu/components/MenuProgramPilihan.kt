@@ -3,6 +3,7 @@ package com.yogahindu4011.presentation.menu_mainMenu.components
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -18,10 +19,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.yogahindu4011.R
+import com.yogahindu4011.navigation.Screen
 
 @Composable
-fun MenuProgramPilihan(modifier: Modifier = Modifier){
+fun MenuProgramPilihan(navController: NavController,modifier: Modifier = Modifier){
 
     Column (
         verticalArrangement = Arrangement.spacedBy(0.dp, Alignment.CenterVertically),
@@ -36,6 +39,9 @@ fun MenuProgramPilihan(modifier: Modifier = Modifier){
             .fillMaxWidth()
             .background(color = MaterialTheme.colorScheme.secondaryContainer)
             .padding(top = 10.dp ,start = 17.dp, bottom = 25.dp)
+            .clickable {
+                navController.navigate(route = Screen.LatihanSurya.route)
+            }
     ) {
         Text(
             text = "PROGRAM LATIHAN PILIHAN",

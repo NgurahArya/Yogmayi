@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.yogahindu4011.navigation.MAIN_ROUTE
+import com.yogahindu4011.navigation.ONBOARD_ROUTE
 import com.yogahindu4011.navigation.ROOT_ROUTE
 import com.yogahindu4011.viewModel.YogaViewModel
 
@@ -15,9 +16,10 @@ fun SetupNavGraph(
 ) {
     NavHost(
         navController = navController,
-        startDestination = MAIN_ROUTE,
+        startDestination = ONBOARD_ROUTE,
         route = ROOT_ROUTE
     ) {
+        onboardNavGraph(navController = navController, viewModel = viewModel)
         mainMenuNavGraph(navController = navController, viewModel = viewModel)
         belajarNavGraph(navController = navController)
         latihanNavGraph(navController = navController)

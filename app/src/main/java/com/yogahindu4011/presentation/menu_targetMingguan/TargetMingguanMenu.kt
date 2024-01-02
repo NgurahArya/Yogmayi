@@ -24,6 +24,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.yogahindu4011.R
 import com.yogahindu4011.presentation.common.MenuTopBar
 import com.yogahindu4011.presentation.common.shortButton
 import com.yogahindu4011.presentation.common.simpanDialog
@@ -102,6 +103,7 @@ fun TargetMinggaunMenu(
     }
     if (openAlertDialog){
         simpanDialog(
+            icon = R.drawable.ic_check_circle,
             onDismissRequest = {openAlertDialog = false},
             onConfirmation = {navController.popBackStack()},
             dialogTitle = "BERHASIL TERSIMPAN",

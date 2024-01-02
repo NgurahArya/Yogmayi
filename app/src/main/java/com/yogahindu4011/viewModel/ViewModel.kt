@@ -20,6 +20,14 @@ class YogaViewModel(
         preferences[PreferencesKeys.NAME]
     }
 
+    val scoreFlow: Flow<Int?> = datastore.data.map {preferences ->
+        preferences[PreferencesKeys.SCORE]
+    }
+
+    val targetFlow: Flow<Int?> = datastore.data.map {preferences ->
+        preferences[PreferencesKeys.TARGET]
+    }
+
     fun saveName(name: String){
         viewModelScope.launch (Dispatchers.IO) {
             datastore.edit { preferences ->
@@ -27,6 +35,15 @@ class YogaViewModel(
             }
         }
     }
+
+    fun saveScore(score: Int){
+        viewModelScope.launch (Dispatchers.IO) {
+            datastore.edit {mutablePreferences ->
+                mutablePreferences[PreferencesKeys.SCORE] = score
+            }
+        }
+    }
+
 }
 
 

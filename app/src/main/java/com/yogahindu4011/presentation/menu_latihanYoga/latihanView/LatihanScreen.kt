@@ -16,6 +16,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalLifecycleOwner
@@ -23,8 +25,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.yogahindu4011.data.gerakan
+import com.yogahindu4011.navigation.Screen
 import com.yogahindu4011.presentation.VideoPlayer
-import com.yogahindu4011.presentation.common.MenuTopBar
+import com.yogahindu4011.presentation.common.DialogTopBar
+import com.yogahindu4011.presentation.common.konfirmasiDialog
 import com.yogahindu4011.presentation.common.longButton
 import com.yogahindu4011.presentation.menu_latihanYoga.components.judulLatihan
 import com.yogahindu4011.presentation.menu_latihanYoga.components.listGerakan
@@ -33,12 +37,21 @@ import com.yogahindu4011.presentation.menu_latihanYoga.components.listGerakan
 fun LatihanScreen(
     navController: NavController
 ) {
+    val isDialog = remember { mutableStateOf(false) }
+
+    if (isDialog.value){
+        konfirmasiDialog(
+            openDialog = isDialog,
+            onConfirmation = {
+                isDialog.value = false
+                navController.navigate(route = Screen.FinishLatihan.route) },
+            dialogTitle = "SELESAI LATIHAN?"
+        )
+    }
+
     Scaffold(
         topBar = {
-            MenuTopBar(
-                text = "Latihan",
-                navController = navController
-            )
+            DialogTopBar( text = "Latihan",navController = navController)
         }
     ) {
         LazyColumn(
@@ -89,7 +102,7 @@ fun LatihanScreen(
                     verticalArrangement = Arrangement.spacedBy(10.dp),
                     horizontalAlignment = Alignment.Start
                 ){
-                    longButton("SELESAI", onClick = {})
+                    longButton("SELESAI", onClick = {isDialog.value = true})
                 }
             }
         }

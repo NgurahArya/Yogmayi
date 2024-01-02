@@ -25,6 +25,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -38,6 +39,7 @@ import com.yogahindu4011.ui.theme.YogaHinduTheme
 
 @Composable
 fun simpanDialog(
+    icon: Int,
     onDismissRequest: () -> Unit,
     onConfirmation: (NavController) -> Unit,
     dialogTitle: String,
@@ -48,7 +50,7 @@ fun simpanDialog(
     AlertDialog(
         icon = {
             Icon(
-                painterResource(id = R.drawable.ic_check_circle),
+                painterResource(id = icon),
                 contentDescription = null,
                 tint = MaterialTheme.colorScheme.primary
             )
@@ -101,8 +103,9 @@ fun simpanDialog(
 fun dialogPrev(){
     YogaHinduTheme {
         simpanDialog(
-            onConfirmation = {},
+            icon = R.drawable.ic_check_circle,
             onDismissRequest = {},
+            onConfirmation = {},
             dialogTitle = "BERHASIL TERSIMPAN",
             dialogText = "Anda akan diarahkan kembali ke Menu Utama",
             navController = rememberNavController()
@@ -111,7 +114,7 @@ fun dialogPrev(){
 }
 @Composable
 fun konfirmasiDialog(
-    onDismissRequest: () -> Unit,
+    openDialog: MutableState<Boolean>,
     onConfirmation: () -> Unit,
     dialogTitle: String,
     modifier: Modifier = Modifier
@@ -126,7 +129,7 @@ fun konfirmasiDialog(
         },
 
         onDismissRequest = {
-            onDismissRequest()
+            openDialog.value = false
         },
 
         confirmButton = {
@@ -143,7 +146,7 @@ fun konfirmasiDialog(
 
         dismissButton = {
             Button(
-                onClick = {onDismissRequest()},
+                onClick = {openDialog.value = false},
                 colors = ButtonDefaults.buttonColors(
                     containerColor = MaterialTheme.colorScheme.error,
                     contentColor = MaterialTheme.colorScheme.onError
@@ -158,11 +161,11 @@ fun konfirmasiDialog(
     )
 }
 
-@Composable
+/*@Composable
 @Preview
 fun prevDialConfirm(){
     YogaHinduTheme { konfirmasiDialog(onDismissRequest = {}, onConfirmation = {}, dialogTitle = "BATALKAN LATIHAN ?") }
-}
+}*/
 
 @Composable
 fun NameDialogAfter(

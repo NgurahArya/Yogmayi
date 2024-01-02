@@ -20,7 +20,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.yogahindu4011.presentation.common.MainAppTopBar
-import com.yogahindu4011.presentation.common.NameDialog
 import com.yogahindu4011.presentation.common.NameDialogAfter
 import com.yogahindu4011.presentation.menu_mainMenu.components.Greetings
 import com.yogahindu4011.presentation.menu_mainMenu.components.MenuBelajarYoga
@@ -39,18 +38,19 @@ fun MainMenuPage(
 
 ) {
     val openDialog = remember { mutableStateOf(false) }
-    val openNameDialog = remember { mutableStateOf(false) }
+
+    //val openNameDialog = remember { mutableStateOf(false) }
 
 
     val name = viewModel.nameFlow.collectAsState(0)
 
-    if (name.value == null || openNameDialog.value /*|| name.value == ""*/){
+    /*if (name.value == null || openNameDialog.value || *//*name.value == ""*//* ){
         NameDialog(
             saveName = viewModel::saveName,
             currentName = name as State<String>,
             openName = openNameDialog
         )
-    }
+    }*/
 
     if (openDialog.value){
         NameDialogAfter(
@@ -88,7 +88,7 @@ fun MainMenuPage(
 
             MenuBelajarYoga(navController = navController)
             MenuLatihanYoga(navController = navController)
-            MenuProgramPilihan()
+            MenuProgramPilihan(navController = navController)
             MenuTargetMingguan(navController = navController)
             MenuTotalLatihan()
         }
