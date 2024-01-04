@@ -58,7 +58,7 @@ fun MenuBelajarYoga(
                     modifier = Modifier
                 )
                 Text(
-                    text = "3 GERAKAN",
+                    text = "3 MATERI",
                     style = MaterialTheme.typography.labelMedium,
                     color = MaterialTheme.colorScheme.onSecondaryContainer,
                     modifier = Modifier

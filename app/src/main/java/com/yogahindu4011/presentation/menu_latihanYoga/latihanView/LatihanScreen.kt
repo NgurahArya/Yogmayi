@@ -92,7 +92,7 @@ fun LatihanScreen(
                 }
             }
             items(gerakan){
-                listGerakan(gerakan = it)
+                listGerakan(gerakan = it, navController  = navController)
             }
             item {
                 Column (
@@ -109,14 +109,6 @@ fun LatihanScreen(
     }
 }
 
-@Composable
-fun itemGerakan(){
-    LazyColumn {
-        items(gerakan){
-            listGerakan(gerakan = it)
-        }
-    }
-}
 
 /*Column(
             modifier = Modifier

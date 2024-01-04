@@ -4,16 +4,14 @@ import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.yogahindu4011.data.GerakanYoga
 import com.yogahindu4011.navigation.navGraph.SetupNavGraph
-import com.yogahindu4011.presentation.menu_mainMenu.MainMenuPage
 import com.yogahindu4011.ui.theme.YogaHinduTheme
 import com.yogahindu4011.viewModel.YogaViewModel
 import com.yogahindu4011.viewModel.YogaViewModelFactory

@@ -41,7 +41,7 @@ fun MainMenuPage(
 
     //val openNameDialog = remember { mutableStateOf(false) }
 
-
+    val score = viewModel.scoreFlow.collectAsState(0)
     val name = viewModel.nameFlow.collectAsState(0)
 
     /*if (name.value == null || openNameDialog.value || *//*name.value == ""*//* ){
@@ -90,7 +90,7 @@ fun MainMenuPage(
             MenuLatihanYoga(navController = navController)
             MenuProgramPilihan(navController = navController)
             MenuTargetMingguan(navController = navController)
-            MenuTotalLatihan()
+            MenuTotalLatihan(total = score.value ?: 0)
         }
     }
 }

@@ -5,18 +5,18 @@ import com.yogahindu4011.R
 
 
 data class GerakanYoga(
-    val id: String,
-    @DrawableRes val imageUrl: Int,
-    val namaGerakan: String,
-    val namaGerakanLoc: String,
-    val caraMelakukan: List<String>,
-    val tips: List<String>
+    val id: Int = 0,
+    @DrawableRes val imageUrl: Int = 0,
+    val namaGerakan: String = "",
+    val namaGerakanLoc: String = "",
+    val caraMelakukan: List<String> = emptyList(),
+    val tips: List<String> = emptyList()
 )
 
 val gerakan = listOf(
 
     GerakanYoga(
-        id = "1",
+        id = 1,
         imageUrl = R.drawable.ic_face_posture_sit,
         namaGerakan = "Pranamasana",
         namaGerakanLoc = "Sikap Berdoa",
@@ -31,7 +31,7 @@ val gerakan = listOf(
     ) ,
 
     GerakanYoga(
-        id = "2",
+        id = 2,
         imageUrl = R.drawable.ic_face_posture_sit,
         namaGerakan = "Hasta Uttanasana",
         namaGerakanLoc = "Sikap Kedua Lengan Terangkat",
@@ -49,7 +49,7 @@ val gerakan = listOf(
     ) ,
 
     GerakanYoga(
-        id = "3",
+        id = 3,
         imageUrl = R.drawable.ic_face_posture_sit,
         namaGerakan = "Padahastasana",
         namaGerakanLoc = "Sikap Tangan Menyentuh Kaki",
@@ -66,7 +66,7 @@ val gerakan = listOf(
     ) ,
 
     GerakanYoga(
-        id = "4",
+        id = 4,
         imageUrl = R.drawable.ic_face_posture_sit,
         namaGerakan = "Asva Sancalanasana",
         namaGerakanLoc = "Sikap Menunggang Kuda",
@@ -82,7 +82,7 @@ val gerakan = listOf(
     ) ,
 
     GerakanYoga(
-        id = "5",
+        id = 5,
         imageUrl = R.drawable.ic_face_posture_sit,
         namaGerakan = "Parvatasana",
         namaGerakanLoc = "Sikap Gunung",
@@ -98,7 +98,7 @@ val gerakan = listOf(
     ) ,
 
     GerakanYoga(
-        id = "6",
+        id = 6,
         imageUrl = R.drawable.ic_face_posture_sit,
         namaGerakan = "Astanga Namaskara",
         namaGerakanLoc = "Sikap Pemberian Hormat",
@@ -113,7 +113,7 @@ val gerakan = listOf(
     ) ,
 
     GerakanYoga(
-        id = "7",
+        id = 7,
         imageUrl = R.drawable.ic_face_posture_sit,
         namaGerakan = "Bhujangasana",
         namaGerakanLoc = "Sikap Cobra",

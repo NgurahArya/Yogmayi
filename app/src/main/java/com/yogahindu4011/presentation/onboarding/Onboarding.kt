@@ -33,6 +33,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.yogahindu4011.R
 import com.yogahindu4011.navigation.Screen
+import com.yogahindu4011.presentation.common.konfirmasiDialog
 import com.yogahindu4011.presentation.common.longButton
 import com.yogahindu4011.presentation.common.shortButton
 import com.yogahindu4011.viewModel.YogaViewModel
@@ -94,6 +95,7 @@ fun OnboardingPage(
     navController: NavController,
     viewModel: YogaViewModel
 ){
+
     val nameState = viewModel.nameFlow.collectAsState("")
 
     val name = remember{
@@ -101,6 +103,20 @@ fun OnboardingPage(
     }
 
     val saveName =  viewModel::saveName
+
+    val isDialog = remember { mutableStateOf(false) }
+
+    if (isDialog.value){
+        konfirmasiDialog(
+            openDialog = isDialog,
+            onConfirmation = {
+                isDialog.value = false
+                saveName.invoke(name.value)
+                navController.navigate(route = Screen.MainMenu.route)
+            },
+            dialogTitle = "Nama Anda Kosong \n\nTetap Lanjutkan?"
+        )
+    }
 
     Box(
         modifier = Modifier
@@ -121,7 +137,7 @@ fun OnboardingPage(
                 contentDescription = null,
                 tint = MaterialTheme.colorScheme.primary,
                 modifier = Modifier
-                    .size(250.dp)
+                    .size(200.dp)
                     .padding(bottom = 15.dp)
             )
 
@@ -130,7 +146,7 @@ fun OnboardingPage(
                 style = MaterialTheme.typography.headlineLarge,
                 color = MaterialTheme.colorScheme.scrim,
                 modifier = Modifier
-                    .padding(bottom = 10.dp)
+                    .padding(bottom = 20.dp)
             )
 
             /*Text(
@@ -153,8 +169,6 @@ fun OnboardingPage(
 
             )
 
-
-
             TextField(
                 modifier = Modifier.fillMaxWidth().padding(bottom = 10.dp),
                 value = name.value,
@@ -173,8 +187,13 @@ fun OnboardingPage(
             shortButton(
                 "SELANJUTNYA",
                 onClick = {
-                    saveName.invoke(name.value)
-                    navController.navigate(route  = Screen.MainMenu.route)
+                    if (name.value == ""){
+                        isDialog.value = true
+                    }else{
+                        saveName.invoke(name.value)
+                        navController.navigate(route  = Screen.MainMenu.route)
+                    }
+
                 },
             )
         }
@@ -186,7 +205,6 @@ fun OnboardingPage(
 @Composable
 fun PrevOnboard(){
     YogaHinduTheme {
-        OnboardingPage(navController = rememberNavController(),  )
+        OnboardingPage(navController = rememberNavController())
     }
 }*/
-

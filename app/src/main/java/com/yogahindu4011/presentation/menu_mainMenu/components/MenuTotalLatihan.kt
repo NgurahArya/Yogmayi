@@ -22,7 +22,7 @@ import androidx.compose.ui.unit.dp
 import com.yogahindu4011.R
 
 @Composable
-fun MenuTotalLatihan(modifier: Modifier = Modifier){
+fun MenuTotalLatihan(total: Int?){
     Row(
         horizontalArrangement = Arrangement.spacedBy(5.dp, Alignment.Start),
         verticalAlignment = Alignment.CenterVertically,
@@ -55,7 +55,7 @@ fun MenuTotalLatihan(modifier: Modifier = Modifier){
 
             //ganti pakai data
             Text(
-                text = "2",
+                text = "$total",
                 style = MaterialTheme.typography.labelLarge,
                 color = MaterialTheme.colorScheme.onSecondaryContainer,
                 modifier = Modifier

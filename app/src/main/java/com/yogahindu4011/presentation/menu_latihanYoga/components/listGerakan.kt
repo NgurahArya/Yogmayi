@@ -21,19 +21,20 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.yogahindu4011.R
 import com.yogahindu4011.data.GerakanYoga
 
 @Composable
 fun listGerakan(
-    gerakan: GerakanYoga
+    gerakan: GerakanYoga,
+    navController: NavController
 ){
     Row (
         horizontalArrangement = Arrangement.spacedBy(16.dp, Alignment.Start),
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
-            .clickable {
-            }
+            .clickable {navController.navigate("detailScreen/${gerakan.id}")}
             .height(height = 105.dp)
             .fillMaxWidth()
             .background(color = MaterialTheme.colorScheme.background)

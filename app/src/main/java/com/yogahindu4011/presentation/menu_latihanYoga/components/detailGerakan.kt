@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -18,6 +19,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -31,9 +33,10 @@ import com.yogahindu4011.ui.theme.YogaHinduTheme
 @Composable
 fun detailGerakan(
     img: Int,
-    title: String,
-    how: String,
-    tips: String,
+    namaGerakan: String,
+    namaGerakanLoc: String,
+    how: List<String>,
+    tips: List<String>,
     navController: NavController
 ) {
     Scaffold(
@@ -68,7 +71,7 @@ fun detailGerakan(
                     )
 
                     Text(
-                        text = title,
+                        text = namaGerakan,
                         style = MaterialTheme.typography.titleLarge,
                         color = MaterialTheme.colorScheme.onBackground,
                         modifier = Modifier
@@ -76,6 +79,21 @@ fun detailGerakan(
 
                     )
 
+                    Text(
+                        text = namaGerakanLoc,
+                        style = MaterialTheme.typography.titleMedium,
+                        color = Color.Gray,
+                        modifier = Modifier
+                            .align(Alignment.CenterHorizontally)
+                    )
+                }
+            }
+
+            items(how){hows ->
+                Column (
+                    verticalArrangement = Arrangement.spacedBy(10.dp),
+                    horizontalAlignment = Alignment.Start,
+                ) {
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -90,14 +108,21 @@ fun detailGerakan(
                     }
 
                     Text(
-                        text = how,
+                        text = hows,
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onBackground,
                         modifier = Modifier
                             .padding(start = 25.dp)
                             .align(Alignment.CenterHorizontally)
                     )
+                }
+            }
 
+            items(tips){ tip->
+                Column (
+                    verticalArrangement = Arrangement.spacedBy(10.dp),
+                    horizontalAlignment = Alignment.Start,
+                ) {
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -112,7 +137,7 @@ fun detailGerakan(
                     }
 
                     Text(
-                        text = tips,
+                        text = tip,
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onBackground,
                         modifier = Modifier
@@ -125,16 +150,17 @@ fun detailGerakan(
     }
 }
 
-@Preview
+/*@Preview
 @Composable
 fun previewDetailGerakan(){
     YogaHinduTheme {
         detailGerakan(
             img = R.drawable.ic_general_header,
-            title = "Pose A",
-            how = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pellentesque mi at elit malesuada scelerisque. Morbi et dui ac tellus pellentesque imperdiet sed semper arcu. Praesent et odio pulvinar, ultricies magna sed, auctor ipsum. Donec tempus id nisl vitae mattis.",
-            tips = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pellentesque mi at elit malesuada scelerisque. Morbi et dui ac tellus pellentesque imperdiet sed semper arcu. Praesent et odio pulvinar, ultricies magna sed, auctor ipsum. Donec tempus id nisl vitae mattis.",
+            namaGerakan = "Pose A",
+            namaGerakanLoc = "Pose A",
+            how = listOf("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pellentesque mi at elit malesuada scelerisque. Morbi et dui ac tellus pellentesque imperdiet sed semper arcu. Praesent et odio pulvinar, ultricies magna sed, auctor ipsum. Donec tempus id nisl vitae mattis."),
+            tips = listOf("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pellentesque mi at elit malesuada scelerisque. Morbi et dui ac tellus pellentesque imperdiet sed semper arcu. Praesent et odio pulvinar, ultricies magna sed, auctor ipsum. Donec tempus id nisl vitae mattis."),
             navController = rememberNavController()
         )
     }
-}
+}*/
