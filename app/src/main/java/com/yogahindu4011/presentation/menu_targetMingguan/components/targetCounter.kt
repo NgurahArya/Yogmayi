@@ -17,27 +17,27 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.yogahindu4011.R
-import com.yogahindu4011.ui.theme.YogaHinduTheme
 
 @Composable
-fun targetCounter(
-    modifier: Modifier = Modifier
-){
+fun targetCounter(onCountChange: (Int) -> Unit){
+
     var count by remember { mutableStateOf(3) }
 
     fun decrement(){
         if(count > 0){
             count--
         }
+        onCountChange(count)
+
     }
 
     fun increment(){
         if(count < 7) {
             count++
         }
+        onCountChange(count)
     }
 
     Row (
@@ -48,7 +48,7 @@ fun targetCounter(
 
         Text(
             text = "$count " + "kali/minggu",
-            style = MaterialTheme.typography.labelSmall,
+            style = MaterialTheme.typography.labelLarge,
             color = MaterialTheme.colorScheme.onBackground
         )
 
@@ -72,8 +72,8 @@ fun minusButton(counter: Int, onClick: () -> Unit) {
             painterResource(id = R.drawable.ic_minus_circle),
             contentDescription = null,
             modifier = Modifier
-                .height(35.dp)
-                .width(35.dp)
+                .height(50.dp)
+                .width(50.dp)
         )
     }
 }
@@ -94,17 +94,17 @@ fun plusButton(counter: Int, onClick: () -> Unit) {
             painterResource(id = R.drawable.ic_plus_circle),
             contentDescription = null,
             modifier = Modifier
-                .height(35.dp)
-                .width(35.dp)
+                .height(50.dp)
+                .width(50.dp)
         )
     }
 }
 
 
-@Composable
+/*@Composable
 @Preview(showBackground = true)
 fun counterPrev(){
     YogaHinduTheme {
         targetCounter()
     }
-}
+}*/

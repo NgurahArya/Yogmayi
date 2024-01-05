@@ -1,15 +1,17 @@
 package com.yogahindu4011.navigation.navGraph
 
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
+import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
-import androidx.navigation.NavType
 import androidx.navigation.compose.composable
-import androidx.navigation.navArgument
 import androidx.navigation.navigation
-import com.yogahindu4011.data.GerakanYoga
 import com.yogahindu4011.navigation.LATIHAN_ROUTE
 import com.yogahindu4011.navigation.Screen
-import com.yogahindu4011.presentation.menu_latihanYoga.components.detailGerakan
 import com.yogahindu4011.presentation.menu_latihanYoga.latihanView.FinishScreen
 import com.yogahindu4011.presentation.menu_latihanYoga.latihanView.LatihanScreen
 import com.yogahindu4011.viewModel.YogaViewModel
@@ -26,7 +28,14 @@ fun NavGraphBuilder.latihanNavGraph(
         composable(
             route = Screen.LatihanSurya.route
         ) {
-            LatihanScreen(navController = navController)
+            AnimatedVisibility(
+                visible = navController.currentDestination?.hierarchy?.any { it.route == LATIHAN_ROUTE } == true,
+                enter = slideInHorizontally(initialOffsetX = { it }, animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)),
+                exit = slideOutHorizontally(targetOffsetX = { -it }, animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing))
+            ) {
+                LatihanScreen(navController = navController)
+            }
+
         }
 
         /*composable(
@@ -52,7 +61,14 @@ fun NavGraphBuilder.latihanNavGraph(
         composable(
             route = Screen.FinishLatihan.route
         ) {
-            FinishScreen(navController = navController, viewModel = viewModel)
+            AnimatedVisibility(
+                visible = navController.currentDestination?.hierarchy?.any { it.route == LATIHAN_ROUTE } == true,
+                enter = slideInHorizontally(initialOffsetX = { it }, animationSpec = tween(durationMillis = 300,easing = FastOutSlowInEasing)),
+                exit = slideOutHorizontally(targetOffsetX = { -it }, animationSpec = tween(durationMillis = 300,easing = FastOutSlowInEasing))
+            ) {
+                FinishScreen(navController = navController, viewModel = viewModel)
+            }
+
         }
 
     }

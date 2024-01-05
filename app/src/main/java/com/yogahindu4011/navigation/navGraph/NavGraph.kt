@@ -1,8 +1,12 @@
+@file:OptIn(ExperimentalAnimationApi::class)
+
 package com.yogahindu4011.navigation.navGraph
 
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.*
+import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.yogahindu4011.navigation.ONBOARD_ROUTE
 import com.yogahindu4011.navigation.ROOT_ROUTE
 import com.yogahindu4011.viewModel.YogaViewModel
@@ -13,7 +17,7 @@ fun SetupNavGraph(
     navController: NavHostController,
     viewModel: YogaViewModel,
 ) {
-    NavHost(
+    AnimatedNavHost(
         navController = navController,
         startDestination = ONBOARD_ROUTE,
         route = ROOT_ROUTE

@@ -1,5 +1,11 @@
 package com.yogahindu4011.navigation.navGraph
 
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
+import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
@@ -23,25 +29,52 @@ fun NavGraphBuilder.mainMenuNavGraph(
         composable(
             route = Screen.MainMenu.route
         ) {
-            MainMenuPage(navController = navController, viewModel = viewModel )
+            AnimatedVisibility(
+                visible = navController.currentDestination?.hierarchy?.any { it.route == MAIN_ROUTE } == true,
+                enter = slideInHorizontally(initialOffsetX = { it }, animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)),
+                exit = slideOutHorizontally(targetOffsetX = { -it }, animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing))
+            ) {
+                MainMenuPage(navController = navController, viewModel = viewModel)
+            }
         }
 
         composable(
             route = Screen.TargetMingguan.route
         ) {
-            TargetMinggaunMenu(navController = navController)
+            AnimatedVisibility(
+                visible = navController.currentDestination?.hierarchy?.any { it.route == MAIN_ROUTE } == true,
+                enter = slideInHorizontally(initialOffsetX = { it }, animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)),
+                exit = slideOutHorizontally(targetOffsetX = { -it }, animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing))
+            ) {
+                TargetMinggaunMenu(navController = navController, viewModel = viewModel)
+            }
+
         }
 
         composable(
             route = Screen.BelajarYoga.route
         ) {
-            BelajarYogaMenu(navController = navController)
+            AnimatedVisibility(
+                visible = navController.currentDestination?.hierarchy?.any { it.route == MAIN_ROUTE } == true,
+                enter = slideInHorizontally(initialOffsetX = { it }, animationSpec = tween(durationMillis = 300)),
+                exit = slideOutHorizontally(targetOffsetX = { -it }, animationSpec = tween(durationMillis = 300))
+            ) {
+                BelajarYogaMenu(navController = navController)
+            }
+
         }
 
         composable(
             route = Screen.LatihanYoga.route
         ) {
-            LatihanYogaMenu(navController = navController)
+            AnimatedVisibility(
+                visible = navController.currentDestination?.hierarchy?.any { it.route == MAIN_ROUTE } == true,
+                enter = slideInHorizontally(initialOffsetX = { it }, animationSpec = tween(durationMillis = 300)),
+                exit = slideOutHorizontally(targetOffsetX = { -it }, animationSpec = tween(durationMillis = 300))
+            ) {
+                LatihanYogaMenu(navController = navController)
+            }
+
         }
     }
 }

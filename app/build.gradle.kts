@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
-
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -108,4 +106,6 @@ dependencies {
     implementation("androidx.room:room-ktx:2.5.2")
 
     implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:chromecast-sender:0.28")
+
+    implementation ("com.google.accompanist:accompanist-navigation-animation:0.33.2-alpha")
 }

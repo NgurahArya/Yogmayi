@@ -12,6 +12,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -20,23 +21,25 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
 import com.yogahindu4011.R
 import com.yogahindu4011.presentation.common.MenuTopBar
 import com.yogahindu4011.presentation.common.shortButton
 import com.yogahindu4011.presentation.common.simpanDialog
 import com.yogahindu4011.presentation.menu_targetMingguan.components.targetCounter
-import com.yogahindu4011.ui.theme.YogaHinduTheme
+import com.yogahindu4011.viewModel.YogaViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TargetMinggaunMenu(
-    navController: NavController
+    navController: NavController,
+    viewModel: YogaViewModel
 ) {
     var openAlertDialog by remember { mutableStateOf(false) }
+
+    val targetValue by viewModel.targetFlow.collectAsState(0)
+    var currentCount by remember { mutableStateOf(0) }
 
     Scaffold(
         topBar = {
@@ -57,7 +60,7 @@ fun TargetMinggaunMenu(
                 ),
             verticalArrangement = Arrangement.spacedBy(20.dp),
             horizontalAlignment = Alignment.Start,
-            ){
+        ){
             Text(
                 text = "Buat Target Latihan",
                 style = MaterialTheme.typography.titleLarge,
@@ -80,10 +83,11 @@ fun TargetMinggaunMenu(
             )
             Row (
                 modifier = Modifier
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                    .padding(top = 15.dp),
                 horizontalArrangement = Arrangement.spacedBy(20.dp, Alignment.CenterHorizontally)
             ){
-                targetCounter()
+                targetCounter { newCount -> currentCount = newCount }
             }
 
             Row (
@@ -94,11 +98,19 @@ fun TargetMinggaunMenu(
                 shortButton(
                     text = "SIMPAN",
                     onClick = {
-                        //blm rewrite data dan tampilin di main menu
+                        viewModel.saveTarget(currentCount)
                         openAlertDialog = true
                     }
                 )
             }
+
+            Text(
+                text = "Target Latihan Anda Saat Ini Adalah: \n\n${targetValue ?: 0} kali dalam seminggu ",
+                style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight(500)),
+                textAlign = TextAlign.Center,
+                color = MaterialTheme.colorScheme.primary,
+                modifier = Modifier.padding(top = 30.dp) .align(Alignment.CenterHorizontally)
+            )
         }
     }
     if (openAlertDialog){
@@ -113,6 +125,9 @@ fun TargetMinggaunMenu(
     }
 }
 
+
+
+/*
 @Composable
 @Preview
 fun Preveww(){
@@ -120,4 +135,4 @@ fun Preveww(){
         TargetMinggaunMenu(navController = rememberNavController())
     }
 
-}
+}*/

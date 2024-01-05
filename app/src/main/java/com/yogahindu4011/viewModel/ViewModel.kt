@@ -15,8 +15,7 @@ import kotlinx.coroutines.launch
 class YogaViewModel(
     private val datastore: DataStore<Preferences>
 ): ViewModel(){
-    val nameFlow: Flow<
-            String?> = datastore.data.map { preferences ->
+    val nameFlow: Flow<String?> = datastore.data.map { preferences ->
         preferences[PreferencesKeys.NAME]
     }
 
@@ -40,6 +39,14 @@ class YogaViewModel(
         viewModelScope.launch (Dispatchers.IO) {
             datastore.edit {mutablePreferences ->
                 mutablePreferences[PreferencesKeys.SCORE] = score
+            }
+        }
+    }
+
+    fun saveTarget(target: Int){
+        viewModelScope.launch (Dispatchers.IO) {
+            datastore.edit {mutablePreferences ->
+                mutablePreferences[PreferencesKeys.TARGET] = target
             }
         }
     }

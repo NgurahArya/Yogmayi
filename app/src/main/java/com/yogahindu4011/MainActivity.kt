@@ -10,6 +10,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.yogahindu4011.data.GerakanYoga
 import com.yogahindu4011.navigation.navGraph.SetupNavGraph
 import com.yogahindu4011.ui.theme.YogaHinduTheme

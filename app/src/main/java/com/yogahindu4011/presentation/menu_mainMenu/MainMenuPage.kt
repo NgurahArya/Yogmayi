@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -39,18 +40,10 @@ fun MainMenuPage(
 ) {
     val openDialog = remember { mutableStateOf(false) }
 
-    //val openNameDialog = remember { mutableStateOf(false) }
+    val emptyDialog = remember { mutableStateOf(false) }
 
     val score = viewModel.scoreFlow.collectAsState(0)
     val name = viewModel.nameFlow.collectAsState(0)
-
-    /*if (name.value == null || openNameDialog.value || *//*name.value == ""*//* ){
-        NameDialog(
-            saveName = viewModel::saveName,
-            currentName = name as State<String>,
-            openName = openNameDialog
-        )
-    }*/
 
     if (openDialog.value){
         NameDialogAfter(
@@ -65,7 +58,7 @@ fun MainMenuPage(
             MainAppTopBar()
         }
     ) {
-        Column(
+        LazyColumn (
             modifier = Modifier
                 .fillMaxSize()
                 .background(color = MaterialTheme.colorScheme.background)
@@ -73,25 +66,31 @@ fun MainMenuPage(
                 .then(
                     Modifier
                         .padding(start = 24.dp, end = 14.dp)
-                ),
-            verticalArrangement = Arrangement.spacedBy(10.dp),
-            horizontalAlignment = Alignment.Start,
-        ) {
-            Greetings(
-                name = if(name.value == null )
-                    "Selamat Datang"
-                else {
-                    "Selamat Datang ${name.value}"
-                },
-                onTitleClick = {openDialog.value = true}
-            )
+                )
+        ){
+            item {
+                Column(
+                    verticalArrangement = Arrangement.spacedBy(10.dp),
+                    horizontalAlignment = Alignment.Start,
+                ) {
+                    Greetings(
+                        name = if (name.value == null)
+                            "Selamat Datang"
+                        else {
+                            "Selamat Datang ${name.value}"
+                        },
+                        onTitleClick = { openDialog.value = true }
+                    )
 
-            MenuBelajarYoga(navController = navController)
-            MenuLatihanYoga(navController = navController)
-            MenuProgramPilihan(navController = navController)
-            MenuTargetMingguan(navController = navController)
-            MenuTotalLatihan(total = score.value ?: 0)
+                    MenuBelajarYoga(navController = navController)
+                    MenuLatihanYoga(navController = navController)
+                    MenuProgramPilihan(navController = navController)
+                    MenuTargetMingguan(navController = navController)
+                    MenuTotalLatihan(total = score.value ?: 0)
+                }
+            }
         }
+
     }
 }
 

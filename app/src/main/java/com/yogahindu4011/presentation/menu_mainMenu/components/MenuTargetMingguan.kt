@@ -46,7 +46,7 @@ fun MenuTargetMingguan(
             style = MaterialTheme.typography.labelLarge,
             color = MaterialTheme.colorScheme.onSecondaryContainer,
             modifier = Modifier
-                .padding(start = 17.dp)
+                .padding(start = 11.dp)
         )
 
         Spacer(modifier = Modifier.weight(1f))
@@ -57,6 +57,7 @@ fun MenuTargetMingguan(
             modifier = Modifier
                 .padding(end = 10.dp, top = 10.dp, bottom = 10.dp)
         )
+
         /*
         //ganti dynamic
         Text(

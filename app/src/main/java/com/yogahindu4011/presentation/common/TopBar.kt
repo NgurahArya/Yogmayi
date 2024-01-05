@@ -25,6 +25,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.yogahindu4011.R
 import com.yogahindu4011.ui.theme.YogaHinduTheme
 import com.yogahindu4011.ui.theme.md_theme_light_primary

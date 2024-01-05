@@ -1,5 +1,8 @@
+@file:OptIn(ExperimentalAnimationApi::class)
+
 package com.yogahindu4011.presentation.menu_belajarYoga.components
 
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -24,6 +27,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.yogahindu4011.R
 import com.yogahindu4011.navigation.Screen
 import com.yogahindu4011.ui.theme.YogaHinduTheme
@@ -171,21 +175,22 @@ fun menuBelajarYogaChandra(
         }
     }
 }
+@OptIn(ExperimentalAnimationApi::class)
 @Composable
 @Preview
 fun MenuBelajarPreview(){
-    YogaHinduTheme { menuBelajarYogaGeneral(navController = rememberNavController()) }
+    YogaHinduTheme { menuBelajarYogaGeneral(navController = rememberAnimatedNavController()) }
 }
 
 @Composable
 @Preview
 fun MenuBelajarPreview2(){
-    YogaHinduTheme { menuBelajarYogaSurya(navController = rememberNavController()) }
+    YogaHinduTheme { menuBelajarYogaSurya(navController = rememberAnimatedNavController()) }
 }
 
 @Composable
 @Preview
 fun MenuBelajarPreview3(){
-    YogaHinduTheme { menuBelajarYogaChandra(navController = rememberNavController()) }
+    YogaHinduTheme { menuBelajarYogaChandra(navController = rememberAnimatedNavController()) }
 }
 
