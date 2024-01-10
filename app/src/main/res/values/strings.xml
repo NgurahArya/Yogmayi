@@ -1,5 +1,14 @@
 <resources>
     <string name="app_name">Yoga Hindu</string>
-    <string name="onboard_mssg">YOGMAYI meruapakan aplikasi pembelajaran Yoga Hindu yang dapat diakses dan digunakan di mana saja </string>
-    <string name="materi1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pellentesque mi at elit malesuada scelerisque. \n\nMorbi et dui ac tellus pellentesque imperdiet sed semper arcu. Praesent et odio pulvinar, ultricies magna sed, auctor ipsum. Donec tempus id nisl vitae mattis. Duis convallis elit at justo maximus sagittis. Duis efficitur est leo, elementum auctor augue imperdiet a. \n\nQuisque justo ligula, blandit a erat sed, pharetra viverra ex. In sit amet tortor at lorem</string>
+    <string name="materi1">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pellentesque mi at elit malesuada scelerisque.
+        \n\nMorbi et dui ac tellus pellentesque imperdiet sed semper arcu. Praesent et odio pulvinar, ultricies magna sed, auctor ipsum.
+        Donec tempus id nisl vitae mattis. Duis convallis elit at justo maximus sagittis. Duis efficitur est leo, elementum auctor augue imperdiet a.
+        \n\nQuisque justo ligula, blandit a erat sed, pharetra viverra ex. In sit amet tortor at lorem</string>
+    <string name="materiYoga">
+        Yoga merupakan salah satu sarana untuk mencapai kesehatan baik jasmani maupun rohani.
+        Yoga pada dasarnya adalah latihan mengontrol indriya dan melihat ke dalam diri, semakin sering seorang mempraktikan Yoga maka ketenangan batin akan semakin terasa pada dirinya.
+        Menurut Rsi Patanjali dalam Yoga Sutra, kata yoga sendiri berasal dari kata “yuj” yang artinya berhubungan, yang dimaksud ialah bertemunya roh individu (atman/purusa) dengan roh universal (Paramatman/Mahapurusa) atau penyatuan antara jiwa manusia dengan jiwa sejati (Tuhan).
+        \n\nSedangkan dalam Kitab Bhagavad Gita, istilah yoga digunakan untuk merepresentasikan "ketenangan", "mahir dalam tindakan/kerja", dan "bebas dari penderitaan".
+    </string>
 </resources>

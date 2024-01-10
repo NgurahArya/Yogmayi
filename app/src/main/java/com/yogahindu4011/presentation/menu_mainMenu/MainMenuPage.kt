@@ -86,7 +86,7 @@ fun MainMenuPage(
                     MenuLatihanYoga(navController = navController)
                     MenuProgramPilihan(navController = navController)
                     MenuTargetMingguan(navController = navController)
-                    MenuTotalLatihan(total = score.value ?: 0)
+                    MenuTotalLatihan(total = score.value ?: 0, modifier = Modifier .padding(end = 20.dp))
                 }
             }
         }

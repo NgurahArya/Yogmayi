@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -24,14 +23,19 @@ import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.yogahindu4011.data.gerakan
 import com.yogahindu4011.navigation.Screen
 import com.yogahindu4011.presentation.VideoPlayer
 import com.yogahindu4011.presentation.common.DialogTopBar
 import com.yogahindu4011.presentation.common.konfirmasiDialog
 import com.yogahindu4011.presentation.common.longButton
 import com.yogahindu4011.presentation.menu_latihanYoga.components.judulLatihan
-import com.yogahindu4011.presentation.menu_latihanYoga.components.listGerakan
+import com.yogahindu4011.presentation.menu_latihanYoga.components.listGerakanList1
+import com.yogahindu4011.presentation.menu_latihanYoga.components.listGerakanList2
+import com.yogahindu4011.presentation.menu_latihanYoga.components.listGerakanList3
+import com.yogahindu4011.presentation.menu_latihanYoga.components.listGerakanList4
+import com.yogahindu4011.presentation.menu_latihanYoga.components.listGerakanList5
+import com.yogahindu4011.presentation.menu_latihanYoga.components.listGerakanList6
+import com.yogahindu4011.presentation.menu_latihanYoga.components.listGerakanList7
 
 @Composable
 fun LatihanScreen(
@@ -53,7 +57,7 @@ fun LatihanScreen(
         topBar = {
             DialogTopBar( text = "Latihan",navController = navController)
         }
-    ) {
+    ) { it ->
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
@@ -91,8 +95,14 @@ fun LatihanScreen(
                     }
                 }
             }
-            items(gerakan){
-                listGerakan(gerakan = it, navController  = navController)
+            item{
+                listGerakanList1(navController = navController)
+                listGerakanList2(navController = navController)
+                listGerakanList3(navController = navController)
+                listGerakanList4(navController = navController)
+                listGerakanList5(navController = navController)
+                listGerakanList6(navController = navController)
+                listGerakanList7(navController = navController)
             }
             item {
                 Column (

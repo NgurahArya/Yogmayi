@@ -11,7 +11,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.yogahindu4011.navigation.BELAJAR_ROUTE
-import com.yogahindu4011.navigation.MAIN_ROUTE
 import com.yogahindu4011.navigation.Screen
 import com.yogahindu4011.presentation.menu_belajarYoga.materiView.components.screenMateriYogaChandra
 import com.yogahindu4011.presentation.menu_belajarYoga.materiView.components.screenMateriYogaGeneral
@@ -30,9 +29,9 @@ fun NavGraphBuilder.belajarNavGraph(
             route = Screen.MateriYoga.route
         ) {
             AnimatedVisibility(
-                visible = navController.currentDestination?.hierarchy?.any { it.route == MAIN_ROUTE } == true,
+                visible = navController.currentDestination?.hierarchy?.any { it.route == BELAJAR_ROUTE } == true,
                 enter = slideInHorizontally(initialOffsetX = { it }, animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)),
-                exit = slideOutHorizontally(targetOffsetX = { -it }, animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing))
+                exit = slideOutHorizontally(targetOffsetX = { it }, animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing))
             ) {
                 screenMateriYogaGeneral(navController = navController)
             }
@@ -44,9 +43,9 @@ fun NavGraphBuilder.belajarNavGraph(
             route = Screen.MateriYoga2.route
         ) {
             AnimatedVisibility(
-                visible = navController.currentDestination?.hierarchy?.any { it.route == MAIN_ROUTE } == true,
+                visible = navController.currentDestination?.hierarchy?.any { it.route == BELAJAR_ROUTE } == true,
                 enter = slideInHorizontally(initialOffsetX = { it }, animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)),
-                exit = slideOutHorizontally(targetOffsetX = { -it }, animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing))
+                exit = slideOutHorizontally(targetOffsetX = { it }, animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing))
             ) {
                 screenMateriYogaSurya(navController = navController)
             }
@@ -58,9 +57,9 @@ fun NavGraphBuilder.belajarNavGraph(
             route = Screen.MateriYoga3.route
         ) {
             AnimatedVisibility(
-                visible = navController.currentDestination?.hierarchy?.any { it.route == MAIN_ROUTE } == true,
+                visible = navController.currentDestination?.hierarchy?.any { it.route == BELAJAR_ROUTE } == true,
                 enter = slideInHorizontally(initialOffsetX = { it }, animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)),
-                exit = slideOutHorizontally(targetOffsetX = { -it }, animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing))
+                exit = slideOutHorizontally(targetOffsetX = { it }, animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing))
             ) {
                 screenMateriYogaChandra(navController = navController)
             }

@@ -19,7 +19,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun MenuTotalLatihan(total: Int?){
+fun MenuTotalLatihan(total: Int?, modifier: Modifier = Modifier){
 
     Row(
         horizontalArrangement = Arrangement.spacedBy(5.dp, Alignment.Start),

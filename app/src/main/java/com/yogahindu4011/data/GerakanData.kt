@@ -13,8 +13,7 @@ data class GerakanYoga(
     val tips: List<String> = emptyList()
 )
 
-val gerakan = listOf(
-
+val gerakan1 =
     GerakanYoga(
         id = 1,
         imageUrl = R.drawable.ic_face_posture_sit,
@@ -28,8 +27,9 @@ val gerakan = listOf(
         tips = listOf(
             "Bernafas dengan dalam menggunakan pernafasan perut ulangi selama 5-7 kali."
         )
-    ) ,
+    )
 
+val gerakan2 =
     GerakanYoga(
         id = 2,
         imageUrl = R.drawable.ic_face_posture_sit,
@@ -46,8 +46,9 @@ val gerakan = listOf(
             "1. Untuk variasi yang lebih mudah tekuk lutut selama melakukan sikap atau hanya mengangkat kedua tangan.",
             "2. Perempuan yang sedang hamil dan menstruasi dianjurkan tidak melakukan sikap ini."
         )
-    ) ,
+    )
 
+val gerakan3 =
     GerakanYoga(
         id = 3,
         imageUrl = R.drawable.ic_face_posture_sit,
@@ -63,8 +64,9 @@ val gerakan = listOf(
             "1. Cobalah untuk mempertahankan agar punggung tidak melengkung.",
             "2. Jika terlalu sulit cobalah dengan lutut seidikit di tekuk."
         )
-    ) ,
+    )
 
+val gerakan4 =
     GerakanYoga(
         id = 4,
         imageUrl = R.drawable.ic_face_posture_sit,
@@ -79,8 +81,9 @@ val gerakan = listOf(
         tips = listOf(
             "Cari keseimbangan yang sesuai saat merenggangkan kaki ke belekang."
         )
-    ) ,
+    )
 
+val gerakan5 =
     GerakanYoga(
         id = 5,
         imageUrl = R.drawable.ic_face_posture_sit,
@@ -95,8 +98,9 @@ val gerakan = listOf(
             "1. Tekuk lutut agar punggung tidak membungkuk.",
             "2. Beri jarak antar kaki agar tumit dapat bersentuhan dengan lantai."
         )
-    ) ,
+    )
 
+val gerakan6 =
     GerakanYoga(
         id = 6,
         imageUrl = R.drawable.ic_face_posture_sit,
@@ -110,8 +114,9 @@ val gerakan = listOf(
         tips = listOf(
             "Turunkan lutut terlebih dahulu jika terasa sulit"
         )
-    ) ,
+    )
 
+val gerakan7 =
     GerakanYoga(
         id = 7,
         imageUrl = R.drawable.ic_face_posture_sit,
@@ -124,5 +129,4 @@ val gerakan = listOf(
         tips = listOf(
             "Jaga posisi leher tetap lurus jika anda memiliki keadaan darah tinggi"
         )
-    ) ,
-)
+    )

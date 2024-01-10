@@ -30,7 +30,7 @@ fun NavGraphBuilder.onboardNavGraph(
             AnimatedVisibility(
                 visible = navController.currentDestination?.hierarchy?.any { it.route == ONBOARD_ROUTE } == true,
                 enter = slideInHorizontally(initialOffsetX = { it }, animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)),
-                exit = slideOutHorizontally(targetOffsetX = { -it }, animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing))
+                exit = slideOutHorizontally(targetOffsetX = { it }, animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing))
             ){
                 OnboardingPage(viewModel = viewModel, navController = navController)
             }
@@ -43,7 +43,7 @@ fun NavGraphBuilder.onboardNavGraph(
             AnimatedVisibility(
                 visible = navController.currentDestination?.hierarchy?.any { it.route == ONBOARD_ROUTE } == true,
                 enter = slideInHorizontally(initialOffsetX = { it }, animationSpec = tween(durationMillis = 300)),
-                exit = slideOutHorizontally(targetOffsetX = { -it }, animationSpec = tween(durationMillis = 300))
+                exit = slideOutHorizontally(targetOffsetX = { it }, animationSpec = tween(durationMillis = 300))
             ) {
                 MainMenuPage(navController = navController, viewModel = viewModel)
             }

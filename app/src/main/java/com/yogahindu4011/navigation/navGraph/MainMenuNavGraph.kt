@@ -32,7 +32,7 @@ fun NavGraphBuilder.mainMenuNavGraph(
             AnimatedVisibility(
                 visible = navController.currentDestination?.hierarchy?.any { it.route == MAIN_ROUTE } == true,
                 enter = slideInHorizontally(initialOffsetX = { it }, animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)),
-                exit = slideOutHorizontally(targetOffsetX = { -it }, animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing))
+                exit = slideOutHorizontally(targetOffsetX = { it }, animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing))
             ) {
                 MainMenuPage(navController = navController, viewModel = viewModel)
             }
@@ -44,7 +44,7 @@ fun NavGraphBuilder.mainMenuNavGraph(
             AnimatedVisibility(
                 visible = navController.currentDestination?.hierarchy?.any { it.route == MAIN_ROUTE } == true,
                 enter = slideInHorizontally(initialOffsetX = { it }, animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)),
-                exit = slideOutHorizontally(targetOffsetX = { -it }, animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing))
+                exit = slideOutHorizontally(targetOffsetX = { it }, animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing))
             ) {
                 TargetMinggaunMenu(navController = navController, viewModel = viewModel)
             }
@@ -57,7 +57,7 @@ fun NavGraphBuilder.mainMenuNavGraph(
             AnimatedVisibility(
                 visible = navController.currentDestination?.hierarchy?.any { it.route == MAIN_ROUTE } == true,
                 enter = slideInHorizontally(initialOffsetX = { it }, animationSpec = tween(durationMillis = 300)),
-                exit = slideOutHorizontally(targetOffsetX = { -it }, animationSpec = tween(durationMillis = 300))
+                exit = slideOutHorizontally(targetOffsetX = { it }, animationSpec = tween(durationMillis = 300))
             ) {
                 BelajarYogaMenu(navController = navController)
             }
@@ -69,8 +69,8 @@ fun NavGraphBuilder.mainMenuNavGraph(
         ) {
             AnimatedVisibility(
                 visible = navController.currentDestination?.hierarchy?.any { it.route == MAIN_ROUTE } == true,
-                enter = slideInHorizontally(initialOffsetX = { it }, animationSpec = tween(durationMillis = 300)),
-                exit = slideOutHorizontally(targetOffsetX = { -it }, animationSpec = tween(durationMillis = 300))
+                enter = slideInHorizontally(initialOffsetX = { it }, animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)),
+                exit = slideOutHorizontally(targetOffsetX = { it }, animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing))
             ) {
                 LatihanYogaMenu(navController = navController)
             }

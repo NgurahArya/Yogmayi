@@ -20,21 +20,35 @@ import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.yogahindu4011.R
 import com.yogahindu4011.data.GerakanYoga
+import com.yogahindu4011.data.gerakan1
+import com.yogahindu4011.data.gerakan2
+import com.yogahindu4011.data.gerakan3
+import com.yogahindu4011.data.gerakan4
+import com.yogahindu4011.data.gerakan5
+import com.yogahindu4011.data.gerakan6
+import com.yogahindu4011.data.gerakan7
+import com.yogahindu4011.navigation.Screen
+import com.yogahindu4011.ui.theme.YogaHinduTheme
 
 @Composable
 fun listGerakan(
     gerakan: GerakanYoga,
-    navController: NavController
+    navController: NavController,
+    route: String
 ){
     Row (
         horizontalArrangement = Arrangement.spacedBy(16.dp, Alignment.Start),
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
-            .clickable {navController.navigate("detailScreen/${gerakan.id}")}
+            .clickable {
+                navController.navigate(route = route)
+            }
             .height(height = 105.dp)
             .fillMaxWidth()
             .background(color = MaterialTheme.colorScheme.background)
@@ -84,6 +98,62 @@ fun listGerakan(
     }
 }
 
+@Composable
+fun listGerakanList1(
+    navController: NavController
+){
+    listGerakan(gerakan1,navController,Screen.Detail1.route)
+}
+
+@Composable
+fun listGerakanList2(
+    navController: NavController
+){
+    listGerakan(gerakan2,navController,Screen.Detail2.route)
+}
+
+@Composable
+fun listGerakanList3(
+    navController: NavController
+){
+    listGerakan(gerakan3,navController,Screen.Detail3.route)
+}
+
+@Composable
+fun listGerakanList4(
+    navController: NavController
+){
+    listGerakan(gerakan4,navController,Screen.Detail4.route)
+}
+
+@Composable
+fun listGerakanList5(
+    navController: NavController
+){
+    listGerakan(gerakan5,navController,Screen.Detail5.route)
+}
+
+@Composable
+fun listGerakanList6(
+    navController: NavController
+){
+    listGerakan(gerakan6,navController,Screen.Detail6.route)
+}
+
+@Composable
+fun listGerakanList7(
+    navController: NavController
+){
+    listGerakan(gerakan7,navController,Screen.Detail7.route)
+}
+
+@Preview
+@Composable
+fun listListPrev(){
+    YogaHinduTheme {
+        listGerakanList1(navController = rememberNavController())
+    }
+}
 /*
 @Preview
 @Composable

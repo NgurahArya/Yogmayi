@@ -24,6 +24,13 @@ sealed class Screen(val route: String) {
     object FinishLatihan: Screen(route = "finish_latihan_yoga")
 
     object LatihanSurya: Screen(route = "latihan_surya")
-    object DetailGerakan: Screen(route = "detailScreen/{gerakanId}")
+
+    object Detail1: Screen(route = "detail_page1")
+    object Detail2: Screen(route = "detail_page2")
+    object Detail3: Screen(route = "detail_page3")
+    object Detail4: Screen(route = "detail_page4")
+    object Detail5: Screen(route = "detail_page5")
+    object Detail6: Screen(route = "detail_page6")
+    object Detail7: Screen(route = "detail_page7")
 
 }
