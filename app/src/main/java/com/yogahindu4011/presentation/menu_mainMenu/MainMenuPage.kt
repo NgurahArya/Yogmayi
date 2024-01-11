@@ -27,6 +27,7 @@ import com.yogahindu4011.presentation.menu_mainMenu.components.MenuBelajarYoga
 import com.yogahindu4011.presentation.menu_mainMenu.components.MenuLatihanYoga
 import com.yogahindu4011.presentation.menu_mainMenu.components.MenuProgramPilihan
 import com.yogahindu4011.presentation.menu_mainMenu.components.MenuTargetMingguan
+import com.yogahindu4011.presentation.menu_mainMenu.components.MenuTargetMingguanEmpty
 import com.yogahindu4011.presentation.menu_mainMenu.components.MenuTotalLatihan
 import com.yogahindu4011.viewModel.YogaViewModel
 
@@ -40,10 +41,11 @@ fun MainMenuPage(
 ) {
     val openDialog = remember { mutableStateOf(false) }
 
-    val emptyDialog = remember { mutableStateOf(false) }
+    /*val emptyDialog = remember { mutableStateOf(false) }*/
 
     val score = viewModel.scoreFlow.collectAsState(0)
     val name = viewModel.nameFlow.collectAsState(0)
+    val target = viewModel.targetFlow.collectAsState(0)
 
     if (openDialog.value){
         NameDialogAfter(
@@ -65,7 +67,7 @@ fun MainMenuPage(
                 .padding(it)
                 .then(
                     Modifier
-                        .padding(start = 24.dp, end = 14.dp)
+                        .padding(start = 24.dp, end = 14.dp, bottom = 20.dp)
                 )
         ){
             item {
@@ -85,8 +87,14 @@ fun MainMenuPage(
                     MenuBelajarYoga(navController = navController)
                     MenuLatihanYoga(navController = navController)
                     MenuProgramPilihan(navController = navController)
-                    MenuTargetMingguan(navController = navController)
-                    MenuTotalLatihan(total = score.value ?: 0, modifier = Modifier .padding(end = 20.dp))
+
+                    if (target.value != 0){
+                        MenuTargetMingguan(target.value as Int,navController = navController)
+                    }else{
+                        MenuTargetMingguanEmpty(navController = navController)
+                    }
+
+                    MenuTotalLatihan(total = score.value ?: 0)
                 }
             }
         }

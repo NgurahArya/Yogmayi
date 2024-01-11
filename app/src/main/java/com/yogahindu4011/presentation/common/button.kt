@@ -14,12 +14,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 
 @Composable
 fun shortButton(
     text: String,
-    onClick: () -> Unit
+    onClick: () -> Unit,
 ){
     Button(
         onClick = {onClick()},
@@ -31,6 +33,26 @@ fun shortButton(
         Text(
             text = text,
             style = MaterialTheme.typography.labelSmall
+        )
+
+    }
+}
+
+@Composable
+fun shortOutlineButton(
+    text: String,
+    onClick: () -> Unit,
+){
+    Button(
+        onClick = {onClick()},
+        colors = ButtonDefaults.buttonColors(
+            containerColor = Color.White,
+            contentColor = MaterialTheme.colorScheme.primary
+        ),
+    ) {
+        Text(
+            text = text,
+            style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold)
         )
 
     }

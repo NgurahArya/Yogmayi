@@ -13,10 +13,11 @@ data class GerakanYoga(
     val tips: List<String> = emptyList()
 )
 
+
 val gerakan1 =
     GerakanYoga(
         id = 1,
-        imageUrl = R.drawable.ic_face_posture_sit,
+        imageUrl = R.drawable.ic_stand_pose,
         namaGerakan = "Pranamasana",
         namaGerakanLoc = "Sikap Berdoa",
         caraMelakukan = listOf(
@@ -32,7 +33,7 @@ val gerakan1 =
 val gerakan2 =
     GerakanYoga(
         id = 2,
-        imageUrl = R.drawable.ic_face_posture_sit,
+        imageUrl = R.drawable.ic_handsup_pose,
         namaGerakan = "Hasta Uttanasana",
         namaGerakanLoc = "Sikap Kedua Lengan Terangkat",
         caraMelakukan = listOf(
@@ -51,7 +52,7 @@ val gerakan2 =
 val gerakan3 =
     GerakanYoga(
         id = 3,
-        imageUrl = R.drawable.ic_face_posture_sit,
+        imageUrl = R.drawable.ic_feettouch_pose,
         namaGerakan = "Padahastasana",
         namaGerakanLoc = "Sikap Tangan Menyentuh Kaki",
         caraMelakukan = listOf(
@@ -69,7 +70,7 @@ val gerakan3 =
 val gerakan4 =
     GerakanYoga(
         id = 4,
-        imageUrl = R.drawable.ic_face_posture_sit,
+        imageUrl = R.drawable.ic_stretch_pose,
         namaGerakan = "Asva Sancalanasana",
         namaGerakanLoc = "Sikap Menunggang Kuda",
         caraMelakukan = listOf(
@@ -86,7 +87,7 @@ val gerakan4 =
 val gerakan5 =
     GerakanYoga(
         id = 5,
-        imageUrl = R.drawable.ic_face_posture_sit,
+        imageUrl = R.drawable.ic_mountain,
         namaGerakan = "Parvatasana",
         namaGerakanLoc = "Sikap Gunung",
         caraMelakukan = listOf(
@@ -130,3 +131,4 @@ val gerakan7 =
             "Jaga posisi leher tetap lurus jika anda memiliki keadaan darah tinggi"
         )
     )
+

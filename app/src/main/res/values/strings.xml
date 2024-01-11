@@ -5,10 +5,13 @@
         \n\nMorbi et dui ac tellus pellentesque imperdiet sed semper arcu. Praesent et odio pulvinar, ultricies magna sed, auctor ipsum.
         Donec tempus id nisl vitae mattis. Duis convallis elit at justo maximus sagittis. Duis efficitur est leo, elementum auctor augue imperdiet a.
         \n\nQuisque justo ligula, blandit a erat sed, pharetra viverra ex. In sit amet tortor at lorem</string>
-    <string name="materiYoga">
-        Yoga merupakan salah satu sarana untuk mencapai kesehatan baik jasmani maupun rohani.
-        Yoga pada dasarnya adalah latihan mengontrol indriya dan melihat ke dalam diri, semakin sering seorang mempraktikan Yoga maka ketenangan batin akan semakin terasa pada dirinya.
+    <string name="materiYogaP1">Yoga merupakan salah satu sarana untuk mencapai kesehatan baik jasmani maupun rohani.
         Menurut Rsi Patanjali dalam Yoga Sutra, kata yoga sendiri berasal dari kata “yuj” yang artinya berhubungan, yang dimaksud ialah bertemunya roh individu (atman/purusa) dengan roh universal (Paramatman/Mahapurusa) atau penyatuan antara jiwa manusia dengan jiwa sejati (Tuhan).
-        \n\nSedangkan dalam Kitab Bhagavad Gita, istilah yoga digunakan untuk merepresentasikan "ketenangan", "mahir dalam tindakan/kerja", dan "bebas dari penderitaan".
+        \n\nDalam Kitab Bhagavad Gita, istilah yoga digunakan untuk merepresentasikan "ketenangan", "mahir dalam tindakan/kerja", dan "bebas dari penderitaan". Di dalam Bhagavad Gita juga menyebutkan bahwa asal mula dari penderitaan hidup adalah karena terpisah dan terasing
+        dari Paramatman dan untuk lepas dari penderitaan tersebut, individu harus mencapai persatuan spiritual atau yoga.
+        \n\nSejak awal pembentukannya ada sembilan (9) bentuk yoga yang dapat dilakukan untuk membeaskan seseorang dari penderitaan dunia, yaitu:
+    </string>
+    <string name="materiYogaP2">Saat ini, praktik yoga yang paling populer adalah Hatha Yoga, Hatha Yoga berfokus pada asana (postur), pranayama (teknik pernafasan), badha (kuncian), mudra (gestur) serta relaksasi yang mendalam.
+        Berlatih Hatha Yoga secara teratur dapat meningkatkan kesehatan tubuh serta menenangkan pikiran dan mental. Terdapat bermacam latihan Hatha Yoga yang dapat diikuti, yang paling populer adalah Surya Namaskara dan Chandra Namaskara.
     </string>
 </resources>

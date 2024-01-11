@@ -57,7 +57,7 @@ fun MenuTotalLatihan(total: Int?, modifier: Modifier = Modifier){
 
             //ganti pakai data
             Text(
-                text = "$total",
+                text = "${total}",
                 style = MaterialTheme.typography.labelLarge,
                 color = MaterialTheme.colorScheme.onSecondaryContainer,
                 modifier = Modifier

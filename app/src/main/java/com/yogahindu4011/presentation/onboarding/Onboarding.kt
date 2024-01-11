@@ -6,6 +6,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -121,14 +122,12 @@ fun OnboardingPage(
     Box(
         modifier = Modifier
             .fillMaxSize()
+            .background(color = MaterialTheme.colorScheme.background)
+    ){
+        Column(modifier = Modifier
+            .fillMaxSize()
+            .padding(start = 16.dp, end = 16.dp)
             .background(color = MaterialTheme.colorScheme.background),
-        contentAlignment = Alignment.Center
-    ) {
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(start = 16.dp, end = 16.dp)
-                .background(color = MaterialTheme.colorScheme.background),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
@@ -137,7 +136,7 @@ fun OnboardingPage(
                 contentDescription = null,
                 tint = MaterialTheme.colorScheme.primary,
                 modifier = Modifier
-                    .size(200.dp)
+                    .size(300.dp)
                     .padding(bottom = 15.dp)
             )
 
@@ -165,12 +164,12 @@ fun OnboardingPage(
                 color = MaterialTheme.colorScheme.secondary,
                 textAlign = TextAlign.Start,
                 modifier = Modifier
-                    .padding(bottom = 10.dp)
+                    .padding(bottom = 15.dp)
 
             )
 
             TextField(
-                modifier = Modifier.fillMaxWidth().padding(bottom = 10.dp),
+                modifier = Modifier.fillMaxWidth().padding(bottom = 20.dp),
                 value = name.value,
                 colors = TextFieldDefaults.textFieldColors(
                     textColor = MaterialTheme.colorScheme.onBackground,
@@ -184,21 +183,28 @@ fun OnboardingPage(
 
             )
 
-            shortButton(
-                "SELANJUTNYA",
-                onClick = {
-                    if (name.value == ""){
-                        isDialog.value = true
-                    }else{
-                        saveName.invoke(name.value)
-                        navController.navigate(route  = Screen.MainMenu.route)
-                    }
+            Row(
+                horizontalArrangement = Arrangement.End, // Align to the right
+                modifier = Modifier.fillMaxWidth() // Ensure Row takes full width
+            ) {
+                shortButton(
+                    "SELANJUTNYA",
+                    onClick = {
+                        if (name.value == "") {
+                            isDialog.value = true
+                        } else {
+                            saveName.invoke(name.value)
+                            navController.navigate(route = Screen.MainMenu.route)
+                        }
 
-                },
-            )
+                    }
+                )
+            }
         }
     }
+
 }
+
 
 
 /*@Preview

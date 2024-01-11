@@ -12,8 +12,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -30,11 +28,9 @@ fun FinishScreen(
     navController: NavController,
     viewModel: YogaViewModel
 ){
-    val saveScore = viewModel::saveScore
     val scoreState = viewModel.scoreFlow.collectAsState(0)
-    val score = remember{
-        mutableStateOf(scoreState.value ?: "")
-    }
+    val targetState = viewModel.targetFlow.collectAsState(0)
+
 
     Box(
         modifier = Modifier
@@ -67,10 +63,13 @@ fun FinishScreen(
                 text = "SELESAI",
                 onClick = {
 
+                    viewModel.saveScore(scoreState.value!! + 1)
+                    if (targetState.value != 0 || targetState.value != null){
+                        viewModel.saveTarget(targetState.value!! - 1)
+                    }
                     navController.navigate(route = Screen.MainMenu.route){
                     popUpTo(Screen.MainMenu.route) {inclusive = true} }
 
-                    viewModel.saveScore(score.value as Int + 1)
 
                 }
             )
