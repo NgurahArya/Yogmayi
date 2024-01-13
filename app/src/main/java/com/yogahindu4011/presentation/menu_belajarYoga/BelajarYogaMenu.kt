@@ -33,7 +33,7 @@ fun BelajarYogaMenu(
     Scaffold(
         topBar = {
             MenuTopBar(
-                text = "Target Mingguan",
+                text = "Belajar Yoga",
                 navController = navController
             )
         }

@@ -171,6 +171,7 @@ fun OnboardingPage(
             TextField(
                 modifier = Modifier.fillMaxWidth().padding(bottom = 20.dp),
                 value = name.value,
+                textStyle = MaterialTheme.typography.labelSmall,
                 colors = TextFieldDefaults.textFieldColors(
                     textColor = MaterialTheme.colorScheme.onBackground,
                     MaterialTheme.colorScheme.surface,

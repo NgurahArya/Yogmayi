@@ -9,7 +9,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -18,10 +18,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.yogahindu4011.R
 import com.yogahindu4011.navigation.Screen
+import com.yogahindu4011.ui.theme.YogaHinduTheme
 
 @Composable
 fun MenuProgramPilihan(navController: NavController,modifier: Modifier = Modifier){
@@ -38,7 +41,7 @@ fun MenuProgramPilihan(navController: NavController,modifier: Modifier = Modifie
             .height(height = 288.dp)
             .fillMaxWidth()
             .background(color = MaterialTheme.colorScheme.secondaryContainer)
-            .padding(top = 10.dp ,start = 17.dp, bottom = 25.dp)
+            .padding(top = 10.dp ,start = 17.dp, bottom = 15.dp)
             .clickable {
                 navController.navigate(route = Screen.LatihanSurya.route)
             }
@@ -52,7 +55,7 @@ fun MenuProgramPilihan(navController: NavController,modifier: Modifier = Modifie
         )
 
         Text(
-            text = "Surya Namaskara, 12 mins",
+            text = "Surya Namaskara, 12 menit",
             style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Normal),
             color = MaterialTheme.colorScheme.onSecondaryContainer,
             modifier = Modifier
@@ -68,11 +71,18 @@ fun MenuProgramPilihan(navController: NavController,modifier: Modifier = Modifie
         )
 
         Image(
-            painter = painterResource(id = R.drawable.ic_face_posture_sit),
+            painter = painterResource(id = R.drawable.pict_stretch_pose),
             contentDescription = null,
             modifier = Modifier
-                .width(194.dp)
-                .height(194.dp)
+                .size(200.dp)
         )
+    }
+}
+
+@Preview
+@Composable
+fun prevTerpilih(){
+    YogaHinduTheme {
+        MenuProgramPilihan(navController = rememberNavController())
     }
 }

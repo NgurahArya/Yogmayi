@@ -27,7 +27,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.yogahindu4011.R
 import com.yogahindu4011.navigation.Screen
-import com.yogahindu4011.presentation.common.shortOutlineButton
+import com.yogahindu4011.presentation.common.shortButton
 import com.yogahindu4011.ui.theme.YogaHinduTheme
 
 @Composable
@@ -117,14 +117,16 @@ fun MenuTargetMingguanEmpty(
             text = "Latihan Yoga secara reguler memilki banyak manfaat. Tetapkan target mingguan untuk membantu anda membangun kebiasaan baik.",
             style = MaterialTheme.typography.labelSmall,
             color = MaterialTheme.colorScheme.onSecondaryContainer,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
+            modifier = Modifier
+                .padding(horizontal = 16.dp)
         )
 
         Column(
             modifier = Modifier
                 .padding(bottom = 10.dp)
         ){
-            shortOutlineButton(
+            shortButton(
                 "TETAPKAN TARGET",
                 {navController.navigate(route = Screen.TargetMingguan.route)}
             )

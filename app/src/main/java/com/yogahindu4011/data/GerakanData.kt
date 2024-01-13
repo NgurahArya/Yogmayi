@@ -17,7 +17,7 @@ data class GerakanYoga(
 val gerakan1 =
     GerakanYoga(
         id = 1,
-        imageUrl = R.drawable.ic_stand_pose,
+        imageUrl = R.drawable.pict_standing_pose,
         namaGerakan = "Pranamasana",
         namaGerakanLoc = "Sikap Berdoa",
         caraMelakukan = listOf(
@@ -33,7 +33,7 @@ val gerakan1 =
 val gerakan2 =
     GerakanYoga(
         id = 2,
-        imageUrl = R.drawable.ic_handsup_pose,
+        imageUrl = R.drawable.pict_hand_pose,
         namaGerakan = "Hasta Uttanasana",
         namaGerakanLoc = "Sikap Kedua Lengan Terangkat",
         caraMelakukan = listOf(
@@ -52,7 +52,7 @@ val gerakan2 =
 val gerakan3 =
     GerakanYoga(
         id = 3,
-        imageUrl = R.drawable.ic_feettouch_pose,
+        imageUrl = R.drawable.pict_bow_pose,
         namaGerakan = "Padahastasana",
         namaGerakanLoc = "Sikap Tangan Menyentuh Kaki",
         caraMelakukan = listOf(
@@ -70,7 +70,7 @@ val gerakan3 =
 val gerakan4 =
     GerakanYoga(
         id = 4,
-        imageUrl = R.drawable.ic_stretch_pose,
+        imageUrl = R.drawable.pict_stretch_pose,
         namaGerakan = "Asva Sancalanasana",
         namaGerakanLoc = "Sikap Menunggang Kuda",
         caraMelakukan = listOf(
@@ -87,7 +87,7 @@ val gerakan4 =
 val gerakan5 =
     GerakanYoga(
         id = 5,
-        imageUrl = R.drawable.ic_mountain,
+        imageUrl = R.drawable.pict_mountain_pose,
         namaGerakan = "Parvatasana",
         namaGerakanLoc = "Sikap Gunung",
         caraMelakukan = listOf(
@@ -104,7 +104,7 @@ val gerakan5 =
 val gerakan6 =
     GerakanYoga(
         id = 6,
-        imageUrl = R.drawable.ic_face_posture_sit,
+        imageUrl = R.drawable.pict_belly_pose,
         namaGerakan = "Astanga Namaskara",
         namaGerakanLoc = "Sikap Pemberian Hormat",
         caraMelakukan = listOf(
@@ -120,7 +120,7 @@ val gerakan6 =
 val gerakan7 =
     GerakanYoga(
         id = 7,
-        imageUrl = R.drawable.ic_face_posture_sit,
+        imageUrl = R.drawable.pict_cobra_pose,
         namaGerakan = "Bhujangasana",
         namaGerakanLoc = "Sikap Cobra",
         caraMelakukan = listOf(

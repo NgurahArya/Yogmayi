@@ -31,7 +31,7 @@ fun LatihanYogaMenu(
     Scaffold(
         topBar = {
             MenuTopBar(
-                text = "Target Mingguan",
+                text = "Latihan Yoga",
                 navController = navController
             )
         }
@@ -60,25 +60,28 @@ fun LatihanYogaMenu(
             )
 
             menuLatihanYoga(
+                label = "LATIHAN PERENGGANGAN",
                 title = "Perenggangan",
                 subTitle = "5 menit",
-                img = R.drawable.ic_book,
+                img = R.drawable.pict_bow_pose,
                 navController = navController,
                 route = Screen.LatihanSurya.route
             )
 
             menuLatihanYoga(
+                label = "LATIHAN SURYA NAMASKARA",
                 title = "Surya Namaskara",
                 subTitle = "12 menit",
-                img = R.drawable.ic_book,
+                img = R.drawable.pict_stretch_pose,
                 navController = navController,
                 route = Screen.LatihanSurya.route
             )
 
             menuLatihanYoga(
+                label = "LATIHAN CHANDRA NAMASKARA",
                 title = "Chandra Namaskara",
                 subTitle = "12 menit",
-                img = R.drawable.ic_book,
+                img = R.drawable.pict_mountain_pose,
                 navController = navController,
                 route = Screen.LatihanSurya.route
             )

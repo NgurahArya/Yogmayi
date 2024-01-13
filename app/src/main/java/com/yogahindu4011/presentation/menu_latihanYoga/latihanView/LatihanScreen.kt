@@ -24,7 +24,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.yogahindu4011.navigation.Screen
-import com.yogahindu4011.presentation.VideoPlayer
+import com.yogahindu4011.presentation.menu_latihanYoga.VideoPlayer
 import com.yogahindu4011.presentation.common.DialogTopBar
 import com.yogahindu4011.presentation.common.konfirmasiDialog
 import com.yogahindu4011.presentation.common.longButton

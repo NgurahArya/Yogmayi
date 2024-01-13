@@ -88,10 +88,10 @@ fun MainMenuPage(
                     MenuLatihanYoga(navController = navController)
                     MenuProgramPilihan(navController = navController)
 
-                    if (target.value != 0){
-                        MenuTargetMingguan(target.value as Int,navController = navController)
-                    }else{
+                    if (target.value == 0 || target.value == null){
                         MenuTargetMingguanEmpty(navController = navController)
+                    }else{
+                        MenuTargetMingguan(target.value as Int,navController = navController)
                     }
 
                     MenuTotalLatihan(total = score.value ?: 0)

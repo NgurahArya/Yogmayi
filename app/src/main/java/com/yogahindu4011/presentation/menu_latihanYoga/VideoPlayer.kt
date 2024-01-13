@@ -1,4 +1,4 @@
-package com.yogahindu4011.presentation
+package com.yogahindu4011.presentation.menu_latihanYoga
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
