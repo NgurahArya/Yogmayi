@@ -40,9 +40,6 @@ fun MainMenuPage(
 
 ) {
     val openDialog = remember { mutableStateOf(false) }
-
-    /*val emptyDialog = remember { mutableStateOf(false) }*/
-
     val score = viewModel.scoreFlow.collectAsState(0)
     val name = viewModel.nameFlow.collectAsState(0)
     val target = viewModel.targetFlow.collectAsState(0)

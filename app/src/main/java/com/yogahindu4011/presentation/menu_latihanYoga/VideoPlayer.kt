@@ -42,5 +42,5 @@ fun VideoPlayer(
 @Preview
 @Composable
 fun PrevVidpLayer(){
-    VideoPlayer("E_8LHkn4g-Q", LocalLifecycleOwner.current)
+    VideoPlayer("GHUELnrFFFY", LocalLifecycleOwner.current)
 }

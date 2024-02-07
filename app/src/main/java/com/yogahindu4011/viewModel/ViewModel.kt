@@ -24,7 +24,7 @@ class YogaViewModel(
     }
 
     val targetFlow: Flow<Int?> = datastore.data.map {preferences ->
-        preferences[PreferencesKeys.TARGET]
+        preferences[PreferencesKeys.TARGET] ?: 0
     }
 
     fun saveName(name: String){

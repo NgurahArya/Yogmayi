@@ -24,10 +24,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.yogahindu4011.navigation.Screen
-import com.yogahindu4011.presentation.menu_latihanYoga.VideoPlayer
 import com.yogahindu4011.presentation.common.DialogTopBar
 import com.yogahindu4011.presentation.common.konfirmasiDialog
 import com.yogahindu4011.presentation.common.longButton
+import com.yogahindu4011.presentation.menu_latihanYoga.VideoPlayer
 import com.yogahindu4011.presentation.menu_latihanYoga.components.judulLatihan
 import com.yogahindu4011.presentation.menu_latihanYoga.components.listGerakanList1
 import com.yogahindu4011.presentation.menu_latihanYoga.components.listGerakanList2
@@ -77,7 +77,7 @@ fun LatihanScreen(
                     verticalArrangement = Arrangement.spacedBy(10.dp),
                     horizontalAlignment = Alignment.Start,
                 ){
-                    VideoPlayer("E_8LHkn4g-Q", LocalLifecycleOwner.current)
+                    VideoPlayer("0Jdl5jrveX4", LocalLifecycleOwner.current)
 
                     judulLatihan("Surya Namaskara","Beginer", "Pelajari Gerakan Yoga Surya Namaskara bagi pemula ", modifier = Modifier .padding(top = 10.dp, bottom = 10.dp))
 

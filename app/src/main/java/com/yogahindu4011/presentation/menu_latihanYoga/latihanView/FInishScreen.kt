@@ -30,7 +30,8 @@ fun FinishScreen(
 ){
     val scoreState = viewModel.scoreFlow.collectAsState(0)
     val targetState = viewModel.targetFlow.collectAsState(0)
-
+    val currentScore = scoreState.value ?: 0
+    val currentTarget = targetState.value ?: 0
 
     Box(
         modifier = Modifier
@@ -62,15 +63,19 @@ fun FinishScreen(
             longOutlineButton(
                 text = "SELESAI",
                 onClick = {
+                    viewModel.saveScore(currentScore + 1)
 
-                    viewModel.saveScore(scoreState.value!! + 1)
-                    if (targetState.value != 0 || targetState.value != null){
-                        viewModel.saveTarget(targetState.value!! - 1)
+                    if (currentTarget != 0) {
+                        viewModel.saveTarget(currentTarget - 1)
+                    } else {
+                        navController.navigate(route = Screen.MainMenu.route) {
+                            popUpTo(Screen.MainMenu.route) { inclusive = true }
+                        }
                     }
-                    navController.navigate(route = Screen.MainMenu.route){
-                    popUpTo(Screen.MainMenu.route) {inclusive = true} }
 
-
+                    navController.navigate(route = Screen.MainMenu.route) {
+                        popUpTo(Screen.MainMenu.route) { inclusive = true }
+                    }
                 }
             )
         }
